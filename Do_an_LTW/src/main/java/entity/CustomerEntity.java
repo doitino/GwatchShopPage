@@ -45,7 +45,7 @@ public class CustomerEntity {
         Statement st = null;
         try {
             st = ConnectionDB.connect();
-            String sql ="insert into customers (ma_kh,ten_kh,password,ngay_sinh,gioi_tinh,email,sdt,dia_chi ) values";
+            String sql ="insert into customers (ma_kh,ten_kh,mat_khau,ngay_sinh,gioi_tinh,email,sdt,dia_chi ) values";
             int i =0;
             for (Customer d:data) {
                 if(++i<data.size())
