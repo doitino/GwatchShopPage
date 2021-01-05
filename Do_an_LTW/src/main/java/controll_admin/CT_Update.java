@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "CT_AddProduct", urlPatterns = "/CT_AddProduct")
-public class CT_AddProduct extends HttpServlet {
+@WebServlet(name = "CT_Update", urlPatterns = "/CT_Update")
+public class CT_Update extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
         //demo_template
@@ -24,17 +24,16 @@ public class CT_AddProduct extends HttpServlet {
         try {
             String id = request.getParameter("id");
             String name = request.getParameter("name");
-            String img1 =request.getParameter("img1");
-            String img2 =request.getParameter("img2");
+            String img1 = request.getParameter("img1");
+            String img2 = request.getParameter("img2");
             String sale = request.getParameter("sale");
             String price = request.getParameter("price");
             String pricesale = request.getParameter("pricesale");
             String brand = request.getParameter("brand");
 
-
             Product pro = new Product();
-
-            if(id!=null || name!=null || img1 !=null ||img2 !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
+            if( name!=null || img1 !=null || img2 !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
+                pro.setId(Integer.parseInt(request.getParameter("id")));
                 pro.setName(request.getParameter("name"));
                 pro.setImg1(request.getParameter("img1"));
                 pro.setImg2(request.getParameter("img2"));
@@ -43,18 +42,15 @@ public class CT_AddProduct extends HttpServlet {
                 pro.setCompare_price(Long.parseLong(request.getParameter("pricesale")));
                 pro.setSale(request.getParameter("sale"));
 
-                ProductEntity.addone(pro);
+                ProductEntity.update(pro);
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CT_Product");
                 dispatcher.forward(request,response);
             }else {
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/product_add.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/product_update.jsp");
                 dispatcher.forward(request,response);
             }
         }finally {
             out.close();
         }
-
-
-
     }
 }

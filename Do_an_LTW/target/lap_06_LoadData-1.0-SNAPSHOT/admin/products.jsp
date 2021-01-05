@@ -127,7 +127,10 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <input class="form-control" type="text" placeholder="Tìm sản phẩm...">
+                                <form action="CT_SeachProductAdmin">
+                                <input class="form-control" name="productSearch" type="text" placeholder="Tìm sản phẩm...">
+                                <input style="margin-left: 500px; background-color: blue;color: white; margin-top: 5px;padding: 5px;padding-right:10px;padding-left:10px;border-radius: 2px" type="submit" value="Tìm">
+                                </form>
                             </div>
                         </div>
                         <br>
@@ -136,9 +139,9 @@
 
                             <tr>
                                 <th>Mã </th>
+                                <th>Tên sản phẩm</th>
                                 <th>Hình ảnh 1</th>
                                 <th>Hình ảnh 2</th>
-                                <th>Tên sản phẩm</th>
                                 <th>Giá sản phẩm</th>
                                 <th>Thương iệu</th>
                                 <th>Nhà cung cấp</th>
@@ -160,7 +163,7 @@
                                 <td>${p.compare_price}</td>
                                 <td>${p.sale}</td>
 
-                                <td><a  class="btn btn-default" class="list-group-item" href="CT_UpdateProduct?id=${p.id}">
+                                <td><a  class="btn btn-default" class="list-group-item" href="CT_GetProductUpdate?id=${p.id}">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                         <a class="btn btn-danger"  class="list-group-item"
                                          href="CT_DeleteProduct?id=${p.id}"><span class="glyphicon glyphicon-trash"></span></a></td></tr>

@@ -116,15 +116,15 @@
                     <div class="panel-body">
                         <form action="CT_AddProduct">
                             <div style="margin-left: 400px" class="register-main">
-                                <div class="col-md-6 account-left">
-                                    <input name="id" placeholder="id" type="number" >
-                                    <input name="name" placeholder="name" type="text">
-                                    <input name="img1" placeholder="img1" type="text" >
-                                    <input name="img2" placeholder="img2" type="text" >
-                                    <input name="brand" placeholder="brand" type="text" >
-                                    <input name="price" placeholder="price" type="number" >
-                                    <input name="pricesale" placeholder="pricesale" type="number" >
-                                    <input name="sale" placeholder="sale" type="text">
+                                <div style="margin-left: -200px;" class="col-md-6 account-left label-input-update">
+                                    <label class="label-update">Mã sản phẩm :<input name="id" placeholder="id" type="number" ></label>
+                                    <label class="label-update">Tên sản phẩm :<input name="name" placeholder="name" type="text" ></label>
+                                    <label class="label-update">Url hình ảnh 1 :<input name="img1" placeholder="img1" type="text" ></label>
+                                    <label class="label-update">Url hình ảnh 2 :<input name="img2" placeholder="img2" type="text" ></label>
+                                    <label class="label-update">Thương hiệu sản phẩm :<input name="brand" placeholder="brand" type="text" ></label>
+                                    <label class="label-update">Giá sản phẩm :<input name="price" placeholder="price" type="number" ></label>
+                                    <label class="label-update">Giá gốc :<input name="pricesale" placeholder="pricesale" type="number" ></label>
+                                    <label class="label-update">Phần trăm sale :<input name="sale" placeholder="sale" type="text" ></label>
                                 </div>
 
                                 <div class="clearfix"></div>
