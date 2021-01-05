@@ -163,4 +163,35 @@ public class ProductEntity {
         }
         return 0;
     }
+    public static List<Product> getSearchAll(String name) {
+        List<Product> re;
+        PreparedStatement st = null;
+        try {
+            String sql = "select * from products where name like ?";
+            st = ConnectionDB.connect(sql);
+            st.setString(1, "%" + name + "%");
+            System.out.println(sql);
+            ResultSet rs = st.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getLong(6),
+                        rs.getLong(7),
+                        rs.getString(8)
+                ));
+            }
+            rs.close();
+            st.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+    }
 }

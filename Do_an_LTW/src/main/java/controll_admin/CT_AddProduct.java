@@ -22,6 +22,7 @@ public class CT_AddProduct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
+            String id = request.getParameter("id");
             String name = request.getParameter("name");
             String img1 =request.getParameter("img1");
             String img2 =request.getParameter("img2");
@@ -33,7 +34,7 @@ public class CT_AddProduct extends HttpServlet {
 
             Product pro = new Product();
 
-            if( name!=null || img1 !=null ||img2 !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
+            if(id!=null || name!=null || img1 !=null ||img2 !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
                 pro.setName(request.getParameter("name"));
                 pro.setImg1(request.getParameter("img1"));
                 pro.setImg2(request.getParameter("img2"));
