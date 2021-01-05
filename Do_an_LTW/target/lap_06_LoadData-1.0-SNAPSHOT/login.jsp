@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
-
+<link href="css/login.css" rel="stylesheet" type="text/css"  media="all"  />
 <jsp:include page="header.jsp"/>
 <%
     String err = "";
@@ -19,7 +19,7 @@
 
             <span></span>
         </div>
-        <form action="LoginServlet" method="post">
+        <form action="CT_Login" method="post">
             <% String mess="";
                 if (request.getAttribute("mess") != null){
                     mess= (String) request.getAttribute("mess");%>

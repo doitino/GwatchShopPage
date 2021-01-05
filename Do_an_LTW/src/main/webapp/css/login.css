@@ -81,8 +81,8 @@ img {
 /****-----start-body----****/
 body {
     width: 100%;
-    height: auto;
-    background: #3aada9;
+    height: auto !important;
+    background: #3aada9 !important;
     font-family: 'Cabin', sans-serif;
 }
 
