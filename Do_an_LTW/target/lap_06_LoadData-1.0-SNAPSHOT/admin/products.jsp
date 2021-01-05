@@ -132,7 +132,7 @@
                         </div>
                         <br>
                         <table class="table table-striped table-hover">
-                            <a href="product_add.html"> <button id="btn_them_post">Thêm sản phẩm mới</button></a>
+                            <a href="CT_AddPoduct"> <button id="btn_them_post">Thêm sản phẩm mới</button></a>
 
                             <tr>
                                 <th>Mã </th>
