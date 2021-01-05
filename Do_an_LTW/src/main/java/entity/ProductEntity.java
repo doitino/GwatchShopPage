@@ -92,6 +92,7 @@ public class ProductEntity {
         }
         return 0;
     }
+    //Xóa 1 sản phẩm trong database
     public static void deleteProduct(int id){
         PreparedStatement ps =null ;
         try {
@@ -103,5 +104,63 @@ public class ProductEntity {
         }catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    //Lấy thông tin sản phẩm cần chỉnh sữa
+    public static Product getProductUpdate(int idUpdate) {
+        Product pro ;
+        Connection con=null;
+        PreparedStatement ps = null;
+        try {
+            String sql = "select * from products where id = ?";
+            ps = ConnectionDB.connect(sql);
+            ps.setInt(1, idUpdate);
+            System.out.println(sql);
+            ResultSet rs = ps.executeQuery();
+            pro = new Product();
+            while (rs.next()) {
+                int id= rs.getInt(1);
+                String name =rs.getString(2);
+                String img1 = rs.getString(3);
+                String img2 = rs.getString(4);
+                String brand =rs.getString(5);
+                Long price = rs.getLong(6);
+                Long com =rs.getLong(7);
+                String sale = rs.getString(8) ;
+                pro= new Product(id,name,img1,img2,brand,price,com,sale);
+            }
+            rs.close();
+            ps.close();
+            return pro;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return  null;
+        }
+    }
+    //Chỉnh sữa thông tin sản phẩm
+    public static int update(Product pro){
+        Connection con;
+        PreparedStatement pre = null;
+        try {
+
+            String sql ="update products set name=?,img1=?,img2=?,brand=? ,price=?,compare_price=?,sale=? where id = ?" ;
+            pre= ConnectionDB.connectupdate(sql);
+            pre.setString(1,pro.getName());
+            pre.setString(2,pro.getImg1());
+            pre.setString(3,pro.getImg2());
+            pre.setString(4,pro.getBrand());
+            pre.setLong(5,pro.getPrice());
+            pre.setLong(6,pro.getCompare_price());
+            pre.setString(7,pro.getSale());
+            pre.setInt(8,pro.getId());
+            System.out.println(sql);
+            pre.executeUpdate();
+
+            return 0;
+        } catch (ClassNotFoundException classNotFoundException) {
+            classNotFoundException.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return 0;
     }
 }

@@ -160,7 +160,7 @@
                                 <td>${p.compare_price}</td>
                                 <td>${p.sale}</td>
 
-                                <td><a  class="btn btn-default" class="list-group-item" href="CT_UpdateProduct?id=${p.id}">
+                                <td><a  class="btn btn-default" class="list-group-item" href="CT_GetProductUpdate?id=${p.id}">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                         <a class="btn btn-danger"  class="list-group-item"
                                          href="CT_DeleteProduct?id=${p.id}"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
