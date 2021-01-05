@@ -24,9 +24,10 @@ public class ProductEntity {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
-                        rs.getLong(5),
+                        rs.getString(5),
                         rs.getLong(6),
-                        rs.getString(7)
+                        rs.getLong(7),
+                        rs.getString(8)
                 ));
             }
             rs.close();
@@ -44,13 +45,13 @@ public class ProductEntity {
         Statement st = null;
         try {
             st = ConnectionDB.connect();
-            String sql ="insert into products (id,name,img,brand ,price,compare_price,sale) values";
+            String sql ="insert into products (id,name,img1,img2,brand ,price,compare_price,sale) values";
             int i =0;
             for (Product d:data) {
                 if(++i<data.size())
-                    sql +="(" +d.getId()+",\"" +d.getName()+"\",\""+d.getImg()+"\",\""+ d.getBrand()+"\","  +d.getPrice()+","+ d.getCompare_price()+",\"" + d.getSale()+"\"),";
+                    sql +="(" +d.getId()+",\"" +d.getName()+"\",\""+d.getImg1()+"\",\""+d.getImg1()+"\",\""+ d.getBrand()+"\","  +d.getPrice()+","+ d.getCompare_price()+",\"" + d.getSale()+"\"),";
                 else
-                    sql +="(" +d.getId()+",\"" +d.getName()+"\",\""+d.getImg()+"\",\""+ d.getBrand()+"\","  +d.getPrice()+","+ d.getCompare_price()+",\"" + d.getSale()+"\")";
+                    sql +="(" +d.getId()+",\"" +d.getName()+"\",\""+d.getImg1()+"\",\""+d.getImg1()+"\",\""+ d.getBrand()+"\","  +d.getPrice()+","+ d.getCompare_price()+",\"" + d.getSale()+"\")";
             }
             st.executeUpdate(sql);
             //  System.out.println(sql);
@@ -70,15 +71,16 @@ public class ProductEntity {
 
             Class.forName("com.mysql.jdbc.Driver");
             con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-            String sql ="insert into products (id,name,img,brand ,price,compare_price,sale) values (?,?,?,?,?,?,?)" ;
+            String sql ="insert into products (id,name,img1,img2,brand ,price,compare_price,sale) values (?,?,?,?,?,?,?,?)" ;
             pre = con.prepareStatement(sql);
             pre.setInt(1,pro.getId());
             pre.setString(2,pro.getName());
-            pre.setString(3,pro.getImg());
-            pre.setString(4,pro.getBrand());
-            pre.setLong(5,pro.getPrice());
-            pre.setLong(6,pro.getCompare_price());
-            pre.setString(7,pro.getSale());
+            pre.setString(3,pro.getImg1());
+            pre.setString(4,pro.getImg2());
+            pre.setString(5,pro.getBrand());
+            pre.setLong(6,pro.getPrice());
+            pre.setLong(7,pro.getCompare_price());
+            pre.setString(8,pro.getSale());
 
             pre.executeUpdate();
 

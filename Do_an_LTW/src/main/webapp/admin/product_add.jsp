@@ -119,7 +119,8 @@
                                 <div class="col-md-6 account-left">
                                     <input name="id" placeholder="id" type="number" >
                                     <input name="name" placeholder="name" type="text">
-                                    <input name="img" placeholder="img" type="text" >
+                                    <input name="img1" placeholder="img1" type="text" >
+                                    <input name="img2" placeholder="img2" type="text" >
                                     <input name="brand" placeholder="brand" type="text" >
                                     <input name="price" placeholder="price" type="number" >
                                     <input name="pricesale" placeholder="pricesale" type="number" >

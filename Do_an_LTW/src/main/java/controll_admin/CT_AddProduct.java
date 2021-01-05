@@ -23,7 +23,8 @@ public class CT_AddProduct extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             String name = request.getParameter("name");
-            String img =request.getParameter("img");
+            String img1 =request.getParameter("img1");
+            String img2 =request.getParameter("img2");
             String sale = request.getParameter("sale");
             String price = request.getParameter("price");
             String pricesale = request.getParameter("pricesale");
@@ -32,9 +33,10 @@ public class CT_AddProduct extends HttpServlet {
 
             Product pro = new Product();
 
-            if( name!=null || img !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
+            if( name!=null || img1 !=null ||img2 !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
                 pro.setName(request.getParameter("name"));
-                pro.setImg(request.getParameter("img"));
+                pro.setImg1(request.getParameter("img1"));
+                pro.setImg2(request.getParameter("img2"));
                 pro.setBrand(request.getParameter("brand"));
                 pro.setPrice(Long.parseLong(request.getParameter("price")));
                 pro.setCompare_price(Long.parseLong(request.getParameter("pricesale")));

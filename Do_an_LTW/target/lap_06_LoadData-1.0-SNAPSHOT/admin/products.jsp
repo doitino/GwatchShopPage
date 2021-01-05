@@ -132,11 +132,12 @@
                         </div>
                         <br>
                         <table class="table table-striped table-hover">
-                            <a href="CT_AddPoduct"> <button id="btn_them_post">Thêm sản phẩm mới</button></a>
+                            <a href="CT_AddProduct"> <button id="btn_them_post">Thêm sản phẩm mới</button></a>
 
                             <tr>
                                 <th>Mã </th>
-                                <th>Hình ảnh</th>
+                                <th>Hình ảnh 1</th>
+                                <th>Hình ảnh 2</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Giá sản phẩm</th>
                                 <th>Thương iệu</th>
@@ -150,7 +151,9 @@
                             <tr>
                                 <td name>${p.id}</td>
                                 <td>${p.name}</td>
-                                <td><img src="${p.img}" style="width: 50px;height: 50px;">
+                                <td><img src="${p.img1}" style="width: 50px;height: 50px;">
+                                </td>
+                                <td><img src="${p.img2}" style="width: 50px;height: 50px;">
                                 </td>
                                 <td>${p.brand}</td>
                                 <td>${p.price}</td>

@@ -6,34 +6,26 @@ public class Product implements Serializable {
 
     private int id;
     private String name;
-    private String img;
+    private String img1;
+    private String img2;
     private String brand;
     private long price;
     private long compare_price;
     private String sale;
 
-    public Product(){
+    public Product() {
 
     }
 
-    public Product(int id, String name, String img, String brand, long price, long compare_price, String sale) {
+    public Product(int id, String name, String img1, String img2, String brand, long price, long compare_price, String sale) {
         this.id = id;
         this.name = name;
-        this.img = img;
+        this.img1 = img1;
+        this.img2 = img2;
         this.brand = brand;
         this.price = price;
         this.compare_price = compare_price;
         this.sale = sale;
-
-    }
-    public Product( String name, String img, String brand, long price, long compare_price, String sale) {
-        this.name = name;
-        this.img = img;
-        this.brand = brand;
-        this.price = price;
-        this.compare_price = compare_price;
-        this.sale = sale;
-
     }
 
 
@@ -53,12 +45,20 @@ public class Product implements Serializable {
         this.name = name;
     }
 
-    public String getImg() {
-        return img;
+    public String getImg1() {
+        return img1;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImg1(String img1) {
+        this.img1 = img1;
+    }
+
+    public String getImg2() {
+        return img2;
+    }
+
+    public void setImg2(String img2) {
+        this.img2 = img2;
     }
 
     public String getBrand() {
@@ -91,8 +91,5 @@ public class Product implements Serializable {
 
     public void setSale(String sale) {
         this.sale = sale;
-    }
-
-    public void add() {
     }
 }

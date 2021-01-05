@@ -167,10 +167,10 @@
                                        title="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG">
                                         <img class="first-image  has-img"
                                              alt=" ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG "
-                                             src="${p.img}" />
+                                             src="${p.img1}" />
 
                                         <img class="second-image"
-                                             src="${p.img}"
+                                             src="${p.img2}"
                                              alt=" ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG " />
 
                                     </a>
