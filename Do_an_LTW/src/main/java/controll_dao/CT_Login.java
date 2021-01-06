@@ -21,6 +21,8 @@ public class CT_Login extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
 
         try {
             String username = request.getParameter("username");

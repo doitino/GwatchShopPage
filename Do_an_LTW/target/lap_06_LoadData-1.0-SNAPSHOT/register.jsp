@@ -5,9 +5,15 @@
 <jsp:include page="header.jsp"/>
 
 <%
-    String err = "";
-    if (request.getAttribute("err") != null) {
-        err = (String) request.getAttribute("err");
+    String user_err = "", email_err ="", pass_err ="";
+    if (request.getAttribute("user_err") != null) {
+        user_err = (String) request.getAttribute("user_err");
+    }
+    if (request.getAttribute("email_err") != null) {
+        email_err = (String) request.getAttribute("email_err");
+    }
+    if (request.getAttribute("pass_err") != null) {
+        pass_err = (String) request.getAttribute("pass_err");
     }
 %>
 <!--/start-login-two-->
@@ -18,11 +24,12 @@
             <h2>Đăng ký</h2>
             <lable></lable>
         </div>
-        <form action="RegisterServlet" method="post">
-            <li style="color: red"><%=err%></li>
+        <form action="CT_register" method="post">
+            <li style="color: red"><%=user_err%></li>
             Tên người dùng
             <li><input type="text" class="text" value=""
                        name="username"><a href="#" class=" icon2 user2"></a></li>
+            <li style="color: red"><%=pass_err%></li>
             Mật khẩu
             <li><input type="password" value=""
                        name="password"><a href="#" class=" icon2 lock2"></a></li>
@@ -36,6 +43,7 @@
                     <option value="Nam">
                     <option value="Nữ">
                 </datalist><a href="#" class=" icon2 lock2"></a></li>
+            <li style="color: red"><%=email_err%></li>
             Email
             <li><input type="text" value=""
                        name="email"><a href="#" class=" icon2 lock2"></a></li>
