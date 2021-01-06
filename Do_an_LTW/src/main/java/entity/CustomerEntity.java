@@ -33,7 +33,7 @@ public class CustomerEntity {
             }
             rs.close();
             st.close();
-            return re ;
+            return re;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             return new LinkedList<>();
@@ -41,17 +41,18 @@ public class CustomerEntity {
         }
 
     }
-    public int insertAll(Collection<Customer> data){
+
+    public int insertAll(Collection<Customer> data) {
         Statement st = null;
         try {
             st = ConnectionDB.connect();
-            String sql ="insert into customers (ma_kh,ten_kh,mat_khau,ngay_sinh,gioi_tinh,email,sdt,dia_chi ) values";
-            int i =0;
-            for (Customer d:data) {
-                if(++i<data.size())
-                    sql +="(" +d.getMa_kh()+",\"" +d.getTen_kh()+"\",\""+d.getPassword()+"\",\""+d.getNgay_sinh()+"\",\""+d.getGioi_tinh()+"\",\""+d.getEmail()+"\",\""+d.getSdt()+"\",\""+ d.getDia_chi()+"\"),";
+            String sql = "insert into customers (ma_kh,ten_kh,mat_khau,ngay_sinh,gioi_tinh,email,sdt,dia_chi ) values";
+            int i = 0;
+            for (Customer d : data) {
+                if (++i < data.size())
+                    sql += "(" + d.getMa_kh() + ",\"" + d.getTen_kh() + "\",\"" + d.getPassword() + "\",\"" + d.getNgay_sinh() + "\",\"" + d.getGioi_tinh() + "\",\"" + d.getEmail() + "\",\"" + d.getSdt() + "\",\"" + d.getDia_chi() + "\"),";
                 else
-                    sql +="(" +d.getMa_kh()+",\"" +d.getTen_kh()+"\",\""+d.getPassword()+"\",\""+d.getNgay_sinh()+"\",\""+d.getGioi_tinh()+"\",\""+d.getEmail()+"\",\""+d.getSdt()+"\",\""+ d.getDia_chi()+"\")";
+                    sql += "(" + d.getMa_kh() + ",\"" + d.getTen_kh() + "\",\"" + d.getPassword() + "\",\"" + d.getNgay_sinh() + "\",\"" + d.getGioi_tinh() + "\",\"" + d.getEmail() + "\",\"" + d.getSdt() + "\",\"" + d.getDia_chi() + "\")";
             }
             st.executeUpdate(sql);
             //        System.out.println(sql);
@@ -63,28 +64,30 @@ public class CustomerEntity {
 
         }
     }
-    public static boolean checkLogin(String email , String password){
-        boolean check =false;
-        PreparedStatement pre ;
+
+    public static boolean checkLogin(String email, String password) {
+        boolean check = false;
+        PreparedStatement pre;
         try {
-            String sql ="select * from customers where email =? and password =?";
+            String sql = "select * from customers where email =? and password =?";
             pre = ConnectionDB.connect(sql);
-            pre.setString(1,email);
-            pre.setString(2,password);
+            pre.setString(1, email);
+            pre.setString(2, password);
 
             ResultSet rs = pre.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 check = true;
-            }else check=false;
+            } else check = false;
 
             rs.close();
             pre.close();
-        }
-
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return check;
     }
+
+
+
 
 }

@@ -23,6 +23,16 @@ public class Customer {
         this.sdt = sdt;
         this.dia_chi = dia_chi;
     }
+    public Customer( String ten_kh, String password, String ngay_sinh, String gioi_tinh, String email, String sdt, String dia_chi) {
+        this.ma_kh = ma_kh;
+        this.ten_kh = ten_kh;
+        this.password = password;
+        this.ngay_sinh = ngay_sinh;
+        this.gioi_tinh = gioi_tinh;
+        this.email = email;
+        this.sdt = sdt;
+        this.dia_chi = dia_chi;
+    }
 
     public int getMa_kh() {
         return ma_kh;
