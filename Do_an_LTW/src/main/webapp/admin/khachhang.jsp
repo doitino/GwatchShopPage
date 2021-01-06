@@ -134,22 +134,34 @@
 
                                 <th>Mã khách hàng</th>
                                 <th>Tên khách hàng</th>
-                                <th>Địa chỉ</th>
+                                <th>Ngày sinh</th>
+                                <th>Giới tính</th>
                                 <th>Email</th>
+                                <th>SĐT</th>
+                                <th>Địa chỉ</th>
 
                             </tr>
                                 <cc:forEach items="${list}" var="k">
                             <tr>
 
                                 <td>${k.ma_kh}</td>
-                                <td>${k.name}</td>
-                                <td>${k.address}</td>
+                                <td>${k.ten_kh}</td>
+                                <td>${k.ngay_sinh}</td>
+                                <td>${k.gioi_tinh}</td>
                                 <td>${k.email}</td>
+                                <td>${k.sdt}</td>
+                                <td>${k.dia_chi}</td>
+
                             </tr>
                                 </cc:forEach>
 
 
                         </table>
+                        <div class="paging">
+                            <cc:forEach begin="1" end="${endPage}" var="i">
+                                <a style="background-color: #a6e1ec; font-weight: 300; margin-right: 3px; padding: 4px ; color: red" name="count_page" href="CT_Customer?count_page=${i}">${i}</a>
+                            </cc:forEach>
+                        </div>
                     </div>
                 </div>
 

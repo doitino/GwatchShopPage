@@ -16,7 +16,7 @@ public class CustomerEntity {
         Statement st = null;
         try {
             st = ConnectionDB.connect();
-            ResultSet rs = st.executeQuery("select * from customer");
+            ResultSet rs = st.executeQuery("select * from customers");
             re = new LinkedList<>();
             while (rs.next()) {
                 re.add(new Customer(
@@ -38,6 +38,59 @@ public class CustomerEntity {
             e.printStackTrace();
             return new LinkedList<>();
 
+        }
+
+    }
+    //Lấy tổng số sản phẩm
+    public static int count() {
+        PreparedStatement pre = null;
+        try {
+            String sql = "select count(*) from customers";
+            pre = ConnectionDB.connect(sql);
+
+            ResultSet rs = pre.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+            rs.close();
+            pre.close();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+
+    }
+    //phân trang
+    public static List<Customer> phanTrang(int index ,int size){
+        PreparedStatement pre = null;
+        List<Customer> re;
+        try {
+            String sql = "select * from customers limit ? offset ?";
+            pre = ConnectionDB.connect(sql);
+            pre.setInt(1,size);
+            pre.setInt(2,index);
+
+            ResultSet rs = pre.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Customer(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8)
+                ));
+            }
+            rs.close();
+            pre.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
         }
 
     }
