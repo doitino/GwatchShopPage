@@ -234,9 +234,9 @@
 
 
                                             <a href="chitietsanpham.html" title="ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN">
-                                                <img class="first-image  has-img" alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " src="${p.img}"  />
+                                                <img class="first-image  has-img" alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " src="${p.img1}"  />
 
-                                                <img  class ="second-image" src="./product.hstatic.net/1000177652/product/4_ec0319148ec348789ae2a59fc5289855_large.jpg"  alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " />
+                                                <img  class ="second-image" src="${p.img2}"  alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " />
 
                                             </a>
                                             <div class="actionss">
@@ -286,20 +286,14 @@
 
                                     </div>
                                     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 text-center">
+                                        <c:forEach begin="1" end="${endPage}" var="i">
+                                        <span class="page-node current"><a name="count_page" class="page-node" href="CT_ProductWebapp?count_page=${i}">${i}</a></span>
 
-
-
-                                        <span class="page-node current">1</span>
-
-
-
-                                        <a class="page-node" href="dssanpham.html">2</a>
-
-
+                                        </c:forEach>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
 
-                                        <a class="pull-right next fa fa-angle-right" href="dssanpham.html"><span>Trang sau</span></a>
+                                        <a name="count_page" class="pull-right next fa fa-angle-right" href="CT_ProductWebapp?count_page=${endPage}"><span>Trang cuối</span></a>
 
                                     </div>
 

@@ -142,8 +142,8 @@
                                 <th>Tên sản phẩm</th>
                                 <th>Hình ảnh 1</th>
                                 <th>Hình ảnh 2</th>
-                                <th>Giá sản phẩm</th>
                                 <th>Thương iệu</th>
+                                <th>Giá sản phẩm</th>
                                 <th>Nhà cung cấp</th>
                                 <th>Ngày cung cấp</th>
                                 <th>Thao tác</th>
@@ -171,6 +171,11 @@
                                     </cc:forEach>
 
                         </table>
+                        <div class="paging">
+                            <cc:forEach begin="1" end="${endPage}" var="i">
+                                <a style="background-color: #a6e1ec; font-weight: 300; margin-right: 3px; padding: 4px ; color: red" name="count_page" href="CT_Product?count_page=${i}">${i}</a>
+                            </cc:forEach>
+                        </div>
                     </div>
                 </div>
 
