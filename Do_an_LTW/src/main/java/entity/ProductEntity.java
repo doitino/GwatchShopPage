@@ -63,6 +63,59 @@ public class ProductEntity {
 
         }
     }
+    //Lấy tổng số sản phẩm
+    public static int count() {
+        PreparedStatement pre = null;
+        try {
+            String sql = "select count(*) from products";
+            pre = ConnectionDB.connect(sql);
+
+            ResultSet rs = pre.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+            rs.close();
+            pre.close();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+
+    }
+    //phân trang
+    public static List<Product> phanTrang(int index ,int size){
+        PreparedStatement pre = null;
+        List<Product> re;
+        try {
+            String sql = "select * from products limit ? offset ?";
+            pre = ConnectionDB.connect(sql);
+            pre.setInt(1,size);
+            pre.setInt(2,index);
+
+            ResultSet rs = pre.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getLong(6),
+                        rs.getLong(7),
+                        rs.getString(8)
+                ));
+            }
+            rs.close();
+            pre.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
+
+    }
     // Thêm 1 sản phẩm vào database
     public static int addone(Product pro){
         Connection con;

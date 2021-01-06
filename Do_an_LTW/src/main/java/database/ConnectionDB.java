@@ -1,6 +1,8 @@
 package database;
 
 import entity.CustomerEntity;
+import entity.ProductEntity;
+import file.Data;
 import file.DataCustomer;
 
 
@@ -39,11 +41,10 @@ public class ConnectionDB {
         }
     }
     public static void main(String[] args) {
-      //  ProductEntity p = new ProductEntity();
-   //     Product pro = new Product(1 ,"Rolex test update", "http://localhost:8050/BaoCaoLapTrinhWeb_N38/product.hstatic.net/1000177652/product/p101.jpg","Đồng hồ Rolex" ,180000,210000,"30%");
-   //     p.insertAll(Data.data.values());
-        CustomerEntity cs = new CustomerEntity();
-        cs.insertAll(DataCustomer.data.values());
+        ProductEntity p = new ProductEntity();
+        p.insertAll(Data.data.values());
+//        CustomerEntity cs = new CustomerEntity();
+//        cs.insertAll(DataCustomer.data.values());
 
 //        HoaDonEntity pr = new HoaDonEntity();
 //        pr.insertAll(DataHoadon.data.values());
