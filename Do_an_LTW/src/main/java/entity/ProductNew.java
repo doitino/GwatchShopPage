@@ -26,7 +26,8 @@ public class ProductNew {
                         rs.getString(5),
                         rs.getLong(6),
                         rs.getLong(7),
-                        rs.getString(8)
+                        rs.getString(8),
+                        rs.getLong(9)
                 ));
             }
             rs.close();
