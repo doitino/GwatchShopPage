@@ -28,7 +28,8 @@ public class ProductEntity {
                             rs.getString(5),
                             rs.getLong(6),
                             rs.getLong(7),
-                            rs.getString(8)
+                            rs.getString(8),
+                            rs.getLong(9)
                     ));
             }
             }
@@ -107,7 +108,8 @@ public class ProductEntity {
                         rs.getString(5),
                         rs.getLong(6),
                         rs.getLong(7),
-                        rs.getString(8)
+                        rs.getString(8),
+                        rs.getLong(9)
                 ));
             }
             rs.close();
@@ -182,7 +184,8 @@ public class ProductEntity {
                 Long price = rs.getLong(6);
                 Long com =rs.getLong(7);
                 String sale = rs.getString(8) ;
-                pro= new Product(id,name,img1,img2,brand,price,com,sale);
+                Long quanlity = rs.getLong(9);
+                pro= new Product(id,name,img1,img2,brand,price,com,sale,quanlity);
             }
             rs.close();
             ps.close();
@@ -238,7 +241,8 @@ public class ProductEntity {
                         rs.getString(5),
                         rs.getLong(6),
                         rs.getLong(7),
-                        rs.getString(8)
+                        rs.getString(8),
+                        rs.getLong(9)
                 ));
             }
             rs.close();
@@ -250,4 +254,38 @@ public class ProductEntity {
 
         }
     }
+    public Product getById(String id) {
+        PreparedStatement s = null;
+        try{
+            String sql="select * from products where id= ?";
+            s= ConnectionDB.connect(sql);
+            s.setString(1,id);
+            ResultSet rs = s.executeQuery();
+            Product p;
+            List<Product> re = new LinkedList<>();
+            if (rs.next()){
+                p=new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getLong(6),
+                        rs.getLong(7),
+                        rs.getString(8),
+                        rs.getLong(9)
+                );
+                rs.close();
+                s.close();
+                return p;
+            }
+            return null;
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
 }

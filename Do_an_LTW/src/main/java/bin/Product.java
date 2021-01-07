@@ -1,5 +1,6 @@
 package bin;
 
+
 import java.io.Serializable;
 
 public class Product implements Serializable {
@@ -12,12 +13,13 @@ public class Product implements Serializable {
     private long price;
     private long compare_price;
     private String sale;
+    private long quantity;
 
     public Product() {
 
     }
 
-    public Product(int id, String name, String img1, String img2, String brand, long price, long compare_price, String sale) {
+    public Product(int id, String name, String img1, String img2, String brand, long price, long compare_price, String sale, long quantity) {
         this.id = id;
         this.name = name;
         this.img1 = img1;
@@ -26,6 +28,7 @@ public class Product implements Serializable {
         this.price = price;
         this.compare_price = compare_price;
         this.sale = sale;
+        this.quantity =quantity;
     }
 
 
@@ -91,5 +94,16 @@ public class Product implements Serializable {
 
     public void setSale(String sale) {
         this.sale = sale;
+    }
+
+    public void setQuantity(long quantity) {
+        this.quantity = quantity;
+    }
+
+    public long getQuantity() {
+        return quantity;
+    }
+    public void add() {
+        this.quantity++;
     }
 }
