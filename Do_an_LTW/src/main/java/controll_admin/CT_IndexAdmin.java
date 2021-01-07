@@ -17,6 +17,7 @@ public class CT_IndexAdmin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        Collection<Product> values = new ProductEntity().getAll();
 //        request.setAttribute("list",values);
+        response.setContentType("text/html; charset=UTF-8");
         request.getRequestDispatcher("admin/indexadmin.jsp").forward(request,response);
 
     }

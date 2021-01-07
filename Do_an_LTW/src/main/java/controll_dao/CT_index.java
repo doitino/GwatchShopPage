@@ -19,12 +19,19 @@ public class CT_index extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
         ProductEntity dao = new ProductEntity();
-        List<Product> list = dao.getAll();
+        String indexs = request.getParameter("index");
+        int index =0 ;
+        if(indexs ==null){ index =12;}
+        if(indexs !=null){ index =Integer.parseInt(indexs);}
+
+        List<Product> list = dao.getAll(index);
         ProductNew dao1 = new ProductNew();
         List<Product> value = dao1.getProductNew();
-
+        
         request.setAttribute("List", list);
+        request.setAttribute("index", index);
         request.setAttribute("ProductNew", value);
         request.getRequestDispatcher("index.jsp").forward(request,response);
     }

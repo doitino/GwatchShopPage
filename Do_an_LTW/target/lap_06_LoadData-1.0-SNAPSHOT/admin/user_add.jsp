@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Tino | Edit Page</title>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="admin/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-useradd.css">
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
 </head>
@@ -113,92 +113,29 @@
                         <h3 class="panel-title">Thêm - sửa tài khoản</h3>
                     </div>
                     <div class="panel-body">
-                        <table id="product_add" class="form">
+                        <form action="CT_AddUser">
+                            <div style="margin-left: 400px" class="register-main">
+                                <div style="margin-left: -200px;" class="col-md-6 account-left label-input-update">
+                                    <label style="" class="label-update">ID tài khoản :<input name="id" placeholder="id" type="number" value=""></label>
+                                    <label class="label-update">Tên tài khoản :<input name="username" placeholder="username" type="text" value=""></label>
+                                    <label class="label-update">Mật khẩu :<input name="password" placeholder="password" type="password" value=""></label>
+                                    <label class="label-update">Group ID :<input name="groupid" placeholder="groupid" type="number" value=""></label>
+                                    <label class="label-update">Permission:<input name="permission" placeholder="permission" type="number" value=""></label>
 
-                            <table class="content" style="background-color: white;width: 800px;">
-                                <tr>
-                                    <td>
+                                </div>
 
-                                        <table class="boder" cellSpacing="1" cellPadding="1">
-                                            <tr>
-                                                <td >
+                                <div class="clearfix"></div>
+                            </div>
+                            <div style="margin-left: 270px" class="address submit">
+                                <input type="submit" value="Thêm">
+                            </div>
 
-
-                                                    <table id="user_add_form" class="form" >
-
-
-                                                        <tr>
-                                                            <th>Tên truy nhập :<span class="note">*</span><input value="TinoTran">  </th>
-                                                            <td><asp:TextBox runat="server" type="text" size="70" id="txtUserName"></asp:TextBox>
-                                                                <asp:Label ID="lblUserName" runat="server"></asp:Label>
-                                                            </td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Mật khẩu    :<span class="note">*</span><input value="**********"></th>
-                                                            <td><asp:TextBox runat="server" type="text" TextMode="Password" size="70" id="txtUserPass"></asp:TextBox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Nhập lại mật khẩu :<span class="note">*</span><input value="**********"></th>
-                                                            <td><asp:TextBox runat="server" type="text" size="70" TextMode="Password" id="txtReUserPass"></asp:TextBox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Họ tên :<span class="note"></span><input value="Trần Văn Đời"></th>
-                                                            <td><asp:TextBox runat="server" type="text" size="70" id="txtFullName"></asp:TextBox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Email :<span class="note">*</span><input value="doitino@gmail.com"></th>
-                                                            <td><asp:TextBox runat="server" type="text" size="70" id="txtEmail"></asp:TextBox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Giới tính :<span class="note"></span></th>
-                                                            <td>
-                                                                <select id="DrdSex" runat="server">
-                                                                    <option value="1">Nam</option>
-                                                                    <option value="2">Nữ</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <th>Địa chỉ :<span class="note"></span><input value="Trường Nông Lâm ,Thủ Đức , TPHCM"></th>
-                                                            <td><asp:TextBox runat="server" type="text" size="70" id="txtAdd"></asp:TextBox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Điện thoại :<span class="note"></span><input value="012345678"></th>
-                                                            <td><asp:TextBox runat="server" type="text" size="70" id="txtPhone"></asp:TextBox></td>
-                                                        </tr>
-
-
-
-
-                                                    </table>
-                                                    <br>
-                                                    <table id="btn_add_edit" class="page" style="margin-left: 220px;">
-                                                        <tr>
-                                                            <td>
-                                                                <asp:Panel ID="PnAdd" runat="server">
-                                                                    <input type="submit" class="button" runat="server" id="BtnSubmit" value="Thêm mới" onserverclick="BtnSubmit_ServerClick">
-                                                                </asp:Panel>
-                                                                <asp:Panel ID="PnEdit" runat="server">
-                                                                    <input type="submit" class="button" runat="server" id="BtnEdit" value="Cập nhập" onserverclick="BtnEdit_ServerClick">
-                                                                </asp:Panel>
-                                                                <asp:Panel ID="PnEdit" runat="server">
-                                                                    <input type="button" value="Quay lại" onclick="javascript:history.go(-1)" class="button">
-                                                                </asp:Panel>
-
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </section>
 
 

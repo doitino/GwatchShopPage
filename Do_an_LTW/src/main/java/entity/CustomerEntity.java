@@ -41,7 +41,6 @@ public class CustomerEntity {
         }
 
     }
-<<<<<<< HEAD
     //Lấy tổng số sản phẩm
     public static int count() {
         PreparedStatement pre = null;
@@ -96,10 +95,6 @@ public class CustomerEntity {
 
     }
     public int insertAll(Collection<Customer> data){
-=======
-
-    public int insertAll(Collection<Customer> data) {
->>>>>>> e874ec3ccd76dca5817a8347a705371fad398b16
         Statement st = null;
         try {
             st = ConnectionDB.connect();
@@ -126,7 +121,7 @@ public class CustomerEntity {
         boolean check = false;
         PreparedStatement pre;
         try {
-            String sql = "select * from customers where email =? and password =?";
+            String sql = "select * from customers where email =? and mat_khau =?";
             pre = ConnectionDB.connect(sql);
             pre.setString(1, email);
             pre.setString(2, password);

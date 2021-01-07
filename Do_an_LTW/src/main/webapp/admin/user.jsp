@@ -123,7 +123,7 @@
                         </div>
                         <br>
                         <table class="table table-striped table-hover">
-                            <a href="user_add.jsp"> <button id="btn_them_user">Thêm tài khoản mới</button></a>
+                            <a href="CT_AddUser"> <button id="btn_them_user">Thêm tài khoản mới</button></a>
                             <tr>
                                 <th>ID</th>
                                 <th>Username</th>
@@ -133,19 +133,24 @@
                                 <th>Thao tác</th>
                             </tr>
                             <cc:forEach items="${list}" var="u">
-                            <tr>
-                                <th>${u.id}</th>
-                                <th>${u.username}</th>
-                                <th>${u.password}</th>
-                                <th>${u.idgroup}</th>
-                                <td>${u.permission}</td>
-                                <td><a class="btn btn-default" class="list-group-item" href="user_add.jsp"><span
-                                        class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a> <a class="btn btn-danger"
-                                         class="list-group-item" href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
-                            </tr>
+                                <tr>
+                                    <th>${u.id}</th>
+                                    <th>${u.username}</th>
+                                    <th>${u.password}</th>
+                                    <th>${u.groupId}</th>
+                                    <td>${u.permission}</td>
+                                    <td><a class="btn btn-default" class="list-group-item" href="CT_GetUserUpdate?id=${u.id}"><span
+                                            class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a> <a class="btn btn-danger"
+                                                                                                                 class="list-group-item" href="CT_UserDelete?id=${u.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                                </tr>
                             </cc:forEach>
 
                         </table>
+                        <div class="paging">
+                            <cc:forEach begin="1" end="${endPage}" var="i">
+                                <a style="background-color: #a6e1ec; font-weight: 300; margin-right: 3px; padding: 4px ; color: red" name="count_page" href="CT_User?count_page=${i}">${i}</a>
+                            </cc:forEach>
+                        </div>
                     </div>
                 </div>
 

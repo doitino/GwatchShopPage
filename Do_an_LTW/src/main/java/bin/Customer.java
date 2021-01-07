@@ -1,6 +1,8 @@
 package bin;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
     private int ma_kh;
     private String ten_kh;
     private String password;
@@ -24,10 +26,8 @@ public class Customer {
         this.dia_chi = dia_chi;
     }
     public Customer( String ten_kh, String password, String ngay_sinh, String gioi_tinh, String email, String sdt, String dia_chi) {
-<<<<<<< HEAD
-=======
         this.ma_kh = ma_kh;
->>>>>>> e874ec3ccd76dca5817a8347a705371fad398b16
+
         this.ten_kh = ten_kh;
         this.password = password;
         this.ngay_sinh = ngay_sinh;

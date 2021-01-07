@@ -200,7 +200,7 @@
                         <div class="col-lg-12 col-sm-12 col-xs-12  pull-center center">
 
 
-                            <a class="btn btn-readmore" href="index.jsp"
+                            <a class="btn btn-readmore" href="CT_index?index=${index +12}"
                                role="button">Xem thêm</a>
 
 

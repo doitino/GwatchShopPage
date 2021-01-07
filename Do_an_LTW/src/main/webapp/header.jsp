@@ -567,7 +567,7 @@
 
 
                                             <li><a class="reg" href="register.jsp" title="Đăng ký">ĐĂNG KÝ</a></li>
-                                            <li><a class="log" href="login.jsp" title="Đăng nhập">Đăng nhập</a>
+                                            <li><a class="log" href="login.jsp" title="Đăng nhập">${dn}</a>
                                             </li>
 
 

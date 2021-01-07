@@ -22,6 +22,7 @@ public class CT_Customer extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
         try{
             String count_page = request.getParameter("count_page");
             CustomerEntity pr = new CustomerEntity();

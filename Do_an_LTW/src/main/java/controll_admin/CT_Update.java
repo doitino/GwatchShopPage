@@ -20,6 +20,7 @@ public class CT_Update extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
             String id = request.getParameter("id");

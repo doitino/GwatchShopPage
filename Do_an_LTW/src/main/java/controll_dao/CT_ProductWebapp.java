@@ -19,6 +19,7 @@ public class CT_ProductWebapp extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
         try{
             String count_page = request.getParameter("count_page");
          //   String count_after = request.getParameter("count_after");

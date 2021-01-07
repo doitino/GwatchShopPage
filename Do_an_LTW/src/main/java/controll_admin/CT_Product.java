@@ -23,6 +23,7 @@ public class CT_Product extends HttpServlet {
 //        Collection<Product> values = new ProductEntity().getAll();
 //        request.setAttribute("list",values);
 //        request.getRequestDispatcher("admin/products.jsp").forward(request,response);
+        response.setContentType("text/html; charset=UTF-8");
         try{
             String count_page = request.getParameter("count_page");
             ProductEntity pr = new ProductEntity();
@@ -38,10 +39,10 @@ public class CT_Product extends HttpServlet {
                 endpage++;
             }
             List<Product> value = pr.phanTrang(index , size);
-            //test xem có lấy đúng số lượng sản phẩm
-//            for (Product p : value){
-//                System.out.println(p);
-//            }
+   //         test xem có lấy đúng số lượng sản phẩm
+            for (Product p : value){
+                System.out.println(p);
+            }
             request.setAttribute("list",value);
             request.setAttribute("endPage",endpage);
             request.getRequestDispatcher("admin/products.jsp").forward(request,response);

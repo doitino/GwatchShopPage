@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductEntity {
 
     //Lấy ra tất cả sản phẩm trong database
-    public static List<Product> getAll() {
+    public static List<Product> getAll(int index) {
         List<Product> re;
         Statement st = null;
         try {
@@ -19,19 +19,22 @@ public class ProductEntity {
             ResultSet rs = st.executeQuery("select * from products");
             re = new LinkedList<>();
             while (rs.next()) {
-                re.add(new Product(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getLong(6),
-                        rs.getLong(7),
-                        rs.getString(8)
-                ));
+                if (re.size() < index){
+                    re.add(new Product(
+                            rs.getInt(1),
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getString(4),
+                            rs.getString(5),
+                            rs.getLong(6),
+                            rs.getLong(7),
+                            rs.getString(8)
+                    ));
+            }
             }
             rs.close();
             st.close();
+
             return re ;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
