@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="cc" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,23 +119,24 @@
                             <!-- BEGIN block_error -->
                             <tr>
                                 <th>
-                                    Số hóa đơn  :<span class="note"></span>
+                                    Mã hóa đơn  :<span class="note"></span>
 
                                 </th>
                                 <td class="chi_tiet">
-                                    <asp:TextBox  runat="server" type="text" size="70" ID="txtName"></asp:TextBox>HD-031
+                                    <asp:TextBox  runat="server" type="text" size="70" ID="txtName"></asp:TextBox>${hd}
 
                                 </td>
 
                             </tr>
                             <!-- END block_error -->
+                            <cc:forEach items="${list}" var="h">
                             <tr>
                                 <th>
-                                    Mã sản phẩm :<span class="note"></span>
+                                    Tên sản phẩm :<span class="note"></span>
 
                                 </th>
                                 <td class="chi_tiet">
-                                    <asp:TextBox runat="server" type="text" size="70" ID="txtName"></asp:TextBox> KC-A702
+                                    <asp:TextBox runat="server" type="text" size="70" ID="txtName"></asp:TextBox> ${h.ten_sp}
                                 </td>
                             </tr>
                             <tr>
@@ -142,7 +145,7 @@
 
                                 </th>
                                 <td class="chi_tiet">
-                                    <asp:TextBox runat="server" type="text" size="10" ID="txtGiaMoi"></asp:TextBox>2.255.000 VND
+                                    <asp:TextBox runat="server" type="text" size="10" ID="txtGiaMoi"></asp:TextBox>${h.gia_sp} VND
                                 </td>
                             </tr>
                             <tr>
@@ -151,28 +154,11 @@
 
                                 </th>
                                 <td class="chi_tiet">
-                                    <asp:TextBox runat="server" type="text" size="10" ID="txtLoai"></asp:TextBox>4
-                                </td>
-                            </tr>
-                            <tr>
-                                <th valign="top">
-                                    Khuyến mãi :
-                                </th>
-                                <td class="chi_tiet">
-                                    <asp:CheckBox id="ChkHot" runat="server" Text=""></asp:CheckBox> 30%
+                                    <asp:TextBox runat="server" type="text" size="10" ID="txtLoai"></asp:TextBox>${h.so_luong}
                                 </td>
                             </tr>
 
-                            <tr>
-                                <th valign="top">
-                                    Tổng tiền :
-                                </th>
-                                <td class="chi_tiet">
-                                    <asp:CheckBox id="ChkHot" runat="server" Text=""></asp:CheckBox> 9.200.000 VND
-                                </td>
-                            </tr>
-
-
+                            </cc:forEach>
 
 
                         </table>

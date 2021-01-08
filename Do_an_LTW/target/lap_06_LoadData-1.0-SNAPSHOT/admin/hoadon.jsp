@@ -136,26 +136,29 @@
                                 }
                             </style>
                             <tr>
-                                <th>Số hóa đơn </th>
+                                <th>Mã hóa đơn </th>
                                 <th>Mã khách hàng</th>
                                 <th>Ngày mua</th>
-                                <th>Nơi giao</th>
-                                <th>Trạng thái</th>
+                                <th>Trị giá</th>
                                 <th>CTHD</th>
 
                             </tr>
                             <cc:forEach items="${list}" var="h">
                             <tr>
-                                <td>${h.mahd}</td>
-                                <td>${h.makh}</td>
-                                <td>${h.ngaymua}</td>
-                                <td>${h.noigiao}</td>
-                                <td>${h.trangthai}</td>
-                                <td><a class="xem" href="chitiethoadon.jsp"><button>Xem..</button></a></td>
+                                <td>${h.ma_hd}</td>
+                                <td>${h.ma_kh}</td>
+                                <td>${h.ngay_mua}</td>
+                                <td>${h.tri_gia}</td>
+                                <td> <a style="background-color: #a6e1ec; font-weight: 300; margin-right: 3px; padding: 4px ; color: red" name="count" href="CT_CTHD?count=${h.ma_hd}">xem...</a></td>
                             </tr>
                             </cc:forEach>
 
                         </table>
+                        <div class="paging">
+                            <cc:forEach begin="1" end="${endPage}" var="i">
+                                <a style="background-color: #a6e1ec; font-weight: 300; margin-right: 3px; padding: 4px ; color: red" name="count_page" href="CT_HoaDon?count_page=${i}">${i}</a>
+                            </cc:forEach>
+                        </div>
                     </div>
                 </div>
 
