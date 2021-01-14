@@ -148,7 +148,7 @@
                                                 <span><label class="sale-lb">- </label> ${p.sale}</span>
                                             </div>
 
-                                            <a href="<c:url value = "detail?id=${p.id}"/>"
+
                                                title="${p.name}">
                                                 <img class="first-image  has-img"
                                                      alt=" ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG "
