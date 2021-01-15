@@ -26,10 +26,11 @@ public class ProductEntity {
                             rs.getString(3),
                             rs.getString(4),
                             rs.getString(5),
-                            rs.getLong(6),
+                            rs.getString(6),
                             rs.getLong(7),
-                            rs.getString(8),
-                            rs.getLong(9)
+                            rs.getLong(8),
+                            rs.getString(9),
+                            rs.getLong(10)
                     ));
             }
             }
@@ -106,10 +107,11 @@ public class ProductEntity {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getLong(6),
+                        rs.getString(6),
                         rs.getLong(7),
-                        rs.getString(8),
-                        rs.getLong(9)
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
                 ));
             }
             rs.close();
@@ -177,15 +179,16 @@ public class ProductEntity {
             pro = new Product();
             while (rs.next()) {
                 int id= rs.getInt(1);
-                String name =rs.getString(2);
-                String img1 = rs.getString(3);
-                String img2 = rs.getString(4);
-                String brand =rs.getString(5);
-                Long price = rs.getLong(6);
-                Long com =rs.getLong(7);
-                String sale = rs.getString(8) ;
-                Long quanlity = rs.getLong(9);
-                pro= new Product(id,name,img1,img2,brand,price,com,sale,quanlity);
+                String ma_loaisp = rs.getString(2);
+                String name =rs.getString(3);
+                String img1 = rs.getString(4);
+                String img2 = rs.getString(5);
+                String brand =rs.getString(6);
+                Long price = rs.getLong(7);
+                Long com =rs.getLong(8);
+                String sale = rs.getString(9) ;
+                Long quanlity = rs.getLong(10);
+                pro= new Product(id,ma_loaisp,name,img1,img2,brand,price,com,sale,quanlity);
             }
             rs.close();
             ps.close();
@@ -239,10 +242,11 @@ public class ProductEntity {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getLong(6),
+                        rs.getString(6),
                         rs.getLong(7),
-                        rs.getString(8),
-                        rs.getLong(9)
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
                 ));
             }
             rs.close();
@@ -270,10 +274,11 @@ public class ProductEntity {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getLong(6),
+                        rs.getString(6),
                         rs.getLong(7),
-                        rs.getString(8),
-                        rs.getLong(9)
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
                 );
                 rs.close();
                 s.close();

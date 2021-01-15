@@ -121,7 +121,7 @@ public class CustomerEntity {
         boolean check = false;
         PreparedStatement pre;
         try {
-            String sql = "select * from customers where email =? and mat_khau =?";
+            String sql = "select * from customers where email =? and password =?";
             pre = ConnectionDB.connect(sql);
             pre.setString(1, email);
             pre.setString(2, password);
