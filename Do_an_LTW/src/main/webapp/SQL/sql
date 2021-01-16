@@ -230,3 +230,27 @@ CREATE TABLE cthd (
 	(1005, 10, 4);
 		INSERT INTO cthd (ma_hd,ma_sp,so_luong) VALUES
 	(1005, 13, 1);
+
+		CREATE TABLE sale (
+    	ma_sale int  null ,
+    	ma_sp int(11) null,
+    	ngay_nhap varchar(25),
+    	sldn int(11) null,
+    	sldb int(11) null
+    	)
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(101, 2,100,"12/01/2020", 20);
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(102, 3, 100,"14/01/2020", 26);
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(103, 4, 100,"16/01/2020", 32);
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(104, 5, 100,"21/01/2020", 12);
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(105, 7, 100,"23/01/2020", 45);
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(106, 2, 100,"25/01/2020", 21);
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(107, 2,100,"12/12/2019", 31);
+    	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
+    	(108, 2, 100,"24/12/2019", 11);
