@@ -26,10 +26,11 @@ public class ProductEntity {
                             rs.getString(3),
                             rs.getString(4),
                             rs.getString(5),
-                            rs.getLong(6),
+                            rs.getString(6),
                             rs.getLong(7),
-                            rs.getString(8),
-                            rs.getLong(9)
+                            rs.getLong(8),
+                            rs.getString(9),
+                            rs.getLong(10)
                     ));
             }
             }
@@ -106,10 +107,11 @@ public class ProductEntity {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getLong(6),
+                        rs.getString(6),
                         rs.getLong(7),
-                        rs.getString(8),
-                        rs.getLong(9)
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
                 ));
             }
             rs.close();
@@ -129,7 +131,7 @@ public class ProductEntity {
 
             Class.forName("com.mysql.jdbc.Driver");
             con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-            String sql ="insert into products (id,name,img1,img2,brand ,price,compare_price,sale) values (?,?,?,?,?,?,?,?)" ;
+            String sql ="insert into products (ma_sp,ten_sp,img1,img2,brand ,price,compare_price,sale) values (?,?,?,?,?,?,?,?)" ;
             pre = con.prepareStatement(sql);
             pre.setInt(1,pro.getId());
             pre.setString(2,pro.getName());
@@ -154,7 +156,7 @@ public class ProductEntity {
     public static void deleteProduct(int id){
         PreparedStatement ps =null ;
         try {
-            String sql = "Delete From products where id =?";
+            String sql = "Delete From products where ma_sp =?";
             ps = ConnectionDB.connect(sql);
             ps.setInt(1,id);
 
@@ -169,7 +171,7 @@ public class ProductEntity {
         Connection con=null;
         PreparedStatement ps = null;
         try {
-            String sql = "select * from products where id = ?";
+            String sql = "select * from products where ma_sp = ?";
             ps = ConnectionDB.connect(sql);
             ps.setInt(1, idUpdate);
             System.out.println(sql);
@@ -177,15 +179,16 @@ public class ProductEntity {
             pro = new Product();
             while (rs.next()) {
                 int id= rs.getInt(1);
-                String name =rs.getString(2);
-                String img1 = rs.getString(3);
-                String img2 = rs.getString(4);
-                String brand =rs.getString(5);
-                Long price = rs.getLong(6);
-                Long com =rs.getLong(7);
-                String sale = rs.getString(8) ;
-                Long quanlity = rs.getLong(9);
-                pro= new Product(id,name,img1,img2,brand,price,com,sale,quanlity);
+                String ma_loai =rs.getString(2);
+                String name =rs.getString(3);
+                String img1 = rs.getString(4);
+                String img2 = rs.getString(5);
+                String brand =rs.getString(6);
+                Long price = rs.getLong(7);
+                Long com =rs.getLong(8);
+                String sale = rs.getString(9) ;
+                Long quanlity = rs.getLong(10);
+                pro= new Product(id,ma_loai,name,img1,img2,brand,price,com,sale,quanlity);
             }
             rs.close();
             ps.close();
@@ -201,7 +204,7 @@ public class ProductEntity {
         PreparedStatement pre = null;
         try {
 
-            String sql ="update products set name=?,img1=?,img2=?,brand=? ,price=?,compare_price=?,sale=? where id = ?" ;
+            String sql ="update products set ten_sp=?,img1=?,img2=?,brand=? ,price=?,compare_price=?,sale=? where ma_sp = ?" ;
             pre= ConnectionDB.connectupdate(sql);
             pre.setString(1,pro.getName());
             pre.setString(2,pro.getImg1());
@@ -226,7 +229,7 @@ public class ProductEntity {
         List<Product> re;
         PreparedStatement st = null;
         try {
-            String sql = "select * from products where name like ?";
+            String sql = "select * from products where ten_sp like ?";
             st = ConnectionDB.connect(sql);
             st.setString(1, "%" + name + "%");
             System.out.println(sql);
@@ -239,10 +242,11 @@ public class ProductEntity {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getLong(6),
+                        rs.getString(6),
                         rs.getLong(7),
-                        rs.getString(8),
-                        rs.getLong(9)
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
                 ));
             }
             rs.close();
@@ -257,7 +261,7 @@ public class ProductEntity {
     public Product getById(String id) {
         PreparedStatement s = null;
         try{
-            String sql="select * from products where id= ?";
+            String sql="select * from products where ma_sp= ?";
             s= ConnectionDB.connect(sql);
             s.setString(1,id);
             ResultSet rs = s.executeQuery();
@@ -270,10 +274,11 @@ public class ProductEntity {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getLong(6),
+                        rs.getString(6),
                         rs.getLong(7),
-                        rs.getString(8),
-                        rs.getLong(9)
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
                 );
                 rs.close();
                 s.close();

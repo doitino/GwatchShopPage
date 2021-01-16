@@ -26,7 +26,8 @@ public class HoaDonEntity {
                         rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(3),
-                        rs.getLong(4)
+                        rs.getLong(4),
+                        rs.getString(5)
 
                 ));
             }
@@ -77,7 +78,8 @@ public class HoaDonEntity {
                         rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(3),
-                        rs.getLong(4)
+                        rs.getLong(4),
+                        rs.getString(5)
 
                 ));
             }

@@ -6,6 +6,7 @@ import java.io.Serializable;
 public class Product implements Serializable {
 
     private int id;
+    private String ma_loaisp;
     private String name;
     private String img1;
     private String img2;
@@ -19,8 +20,9 @@ public class Product implements Serializable {
 
     }
 
-    public Product(int id, String name, String img1, String img2, String brand, long price, long compare_price, String sale, long quantity) {
+    public Product(int id, String ma_loaisp, String name, String img1, String img2, String brand, long price, long compare_price, String sale, long quantity) {
         this.id = id;
+        this.ma_loaisp = ma_loaisp;
         this.name = name;
         this.img1 = img1;
         this.img2 = img2;
@@ -28,9 +30,8 @@ public class Product implements Serializable {
         this.price = price;
         this.compare_price = compare_price;
         this.sale = sale;
-        this.quantity =quantity;
+        this.quantity = quantity;
     }
-
 
     public int getId() {
         return id;
@@ -38,6 +39,14 @@ public class Product implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getMa_loaisp() {
+        return ma_loaisp;
+    }
+
+    public void setMa_loaisp(String ma_loaisp) {
+        this.ma_loaisp = ma_loaisp;
     }
 
     public String getName() {
