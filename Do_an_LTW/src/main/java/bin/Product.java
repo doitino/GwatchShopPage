@@ -105,14 +105,14 @@ public class Product implements Serializable {
         this.sale = sale;
     }
 
+    public long getQuantity() {
+        return quantity;
+    }
+
     public void setQuantity(long quantity) {
         this.quantity = quantity;
     }
 
-    public long getQuantity() {
-        return quantity;
-    }
     public void add() {
-        this.quantity++;
     }
 }

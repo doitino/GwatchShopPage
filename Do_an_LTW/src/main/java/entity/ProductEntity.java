@@ -179,7 +179,11 @@ public class ProductEntity {
             pro = new Product();
             while (rs.next()) {
                 int id= rs.getInt(1);
+
                 String ma_loai =rs.getString(2);
+
+                String ma_loaisp = rs.getString(2);
+
                 String name =rs.getString(3);
                 String img1 = rs.getString(4);
                 String img2 = rs.getString(5);
@@ -188,7 +192,11 @@ public class ProductEntity {
                 Long com =rs.getLong(8);
                 String sale = rs.getString(9) ;
                 Long quanlity = rs.getLong(10);
+
                 pro= new Product(id,ma_loai,name,img1,img2,brand,price,com,sale,quanlity);
+
+                pro= new Product(id,ma_loaisp,name,img1,img2,brand,price,com,sale,quanlity);
+
             }
             rs.close();
             ps.close();
