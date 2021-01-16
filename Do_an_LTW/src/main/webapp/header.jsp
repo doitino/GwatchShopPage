@@ -650,7 +650,7 @@
 
 
                                 <li>
-                                    <a href="CT_index_Webapp" class=" current" title="Trang chủ">
+                                    <a href="CT_index" class=" current" title="Trang chủ">
                                         <span>Trang chủ</span>
                                     </a>
                                 </li>
@@ -658,7 +658,7 @@
 
 
                                 <li class="dropdown">
-                                    <a href="products.jsp" title="Đồng hồ nam" class="">
+                                    <a href="CT_Product_Nam" title="Đồng hồ nam" class="">
                                         <span>Đồng hồ nam</span>
                                     </a>
                                     <ul class="dropdown-menu" role="menu">
@@ -701,7 +701,7 @@
 
 
                                 <li class="dropdown">
-                                    <a href="products.jsp" title="Đồng hồ nữ" class="">
+                                    <a href="CT_Product_Nu" title="Đồng hồ nữ" class="">
                                         <span>Đồng hồ nữ</span>
                                     </a>
                                     <ul class="dropdown-menu" role="menu">

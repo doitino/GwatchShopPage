@@ -45,6 +45,113 @@ public class ProductEntity {
         }
 
     }
+    public static List<Product> getAll(String ma_km) {
+        List<Product> re;
+        PreparedStatement ps = null;
+        String sql ="";
+        try {
+            sql ="select * from products where ma_loaisp like ? ";
+            ps = ConnectionDB.connect(sql);
+            ps.setString(1,"%"+ma_km+"%");
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                ));
+            }
+            System.out.println(re.size());
+            rs.close();
+            ps.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
+    //lấy sản phẩm được khuyến mãi
+    public static List<Product> getProductSale() {
+        List<Product> re;
+        PreparedStatement ps = null;
+        String sql ="";
+        try {
+            sql ="select * from products where sale not like ? ";
+            ps = ConnectionDB.connect(sql);
+            ps.setString(1,"0%");
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                ));
+            }
+            System.out.println(re.size());
+            rs.close();
+            ps.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
+    //lấy sản phẩm bán chạy nhất
+    public static List<Product> getSaleTop() {
+        List<Product> re;
+        PreparedStatement ps = null;
+        String sql ="";
+        try {
+            sql ="select * from sale s join products p on s.ma_sp = p.ma_sp  where sldb > ? order by  sldb desc";
+            ps = ConnectionDB.connect(sql);
+            ps.setInt(1,10);
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getLong(12),
+                        rs.getLong(13),
+                        rs.getString(14),
+                        rs.getLong(15)
+                ));
+            }
+            System.out.println(re.size());
+            rs.close();
+            ps.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
     //Thêm nhiều sản phẩm vào database
     public static int insertAll(Collection<Product> data){
         Statement st = null;

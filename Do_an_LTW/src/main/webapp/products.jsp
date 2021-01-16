@@ -98,7 +98,7 @@
 
 
                             <li class="item  first">
-                                <a href="dssanpham.html">
+                                <a href="CT_Product_Sale">
                                     <span>Sản phẩm khuyến mãi</span>
                                 </a>
                             </li>
@@ -108,7 +108,7 @@
 
 
                             <li class="item  ">
-                                <a href="dssanpham.html">
+                                <a href="CT_Product_Top">
                                     <span>Sản phẩm nổi bật</span>
                                 </a>
                             </li>
