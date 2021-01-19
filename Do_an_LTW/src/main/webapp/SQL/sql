@@ -254,3 +254,44 @@ CREATE TABLE cthd (
     	(107, 2,100,"12/12/2019", 31);
     	INSERT INTO sale (ma_sale,ma_sp,ngay_nhap,sldn,sldb) VALUES
     	(108, 2, 100,"24/12/2019", 11);
+
+
+
+    	id int not null,
+        noi_san_xuat varchar(50) null,
+        tinh_trang varchar(50) null,
+        chat_lieu_vo VARBINARY(512) null,
+        chat_lieu_mat VARBINARY(512) null,
+        nang_luong varchar(50) null,
+        chong_nuoc VARBINARY(512) null,
+        kich_thuoc_mat VARBINARY(512) null,
+        kich_thuoc_day varchar(50) null,
+        CONSTRAINT prim_pm PRIMARY KEY (id)
+        )
+
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(1,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(2,"Ý","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(3,"Anh","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(4,"Mỹ","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(5,"Việt Nam","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(6,"Thái Lan","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(7,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(8,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(9,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(10,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(11,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(12,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+        				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
+        				(14,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");

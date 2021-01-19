@@ -117,14 +117,14 @@ public class ProductEntity {
 
     }
     //lấy sản phẩm bán chạy nhất
-    public static List<Product> getSaleTop() {
+    public static List<Product> getSaleTop(int top) {
         List<Product> re;
         PreparedStatement ps = null;
         String sql ="";
         try {
             sql ="select * from sale s join products p on s.ma_sp = p.ma_sp  where sldb > ? order by  sldb desc";
             ps = ConnectionDB.connect(sql);
-            ps.setInt(1,10);
+            ps.setInt(1,top);
             ResultSet rs = ps.executeQuery();
             re = new LinkedList<>();
             while (rs.next()) {

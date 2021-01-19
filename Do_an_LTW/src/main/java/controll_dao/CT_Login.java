@@ -23,7 +23,10 @@ public class CT_Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
-
+        String dn =request.getParameter("dn");
+        if(dn==null){
+            request.setAttribute("dn", "Đăng nhập");
+        }
         try {
             String username = request.getParameter("username");
             String password = request.getParameter("password");

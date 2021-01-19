@@ -148,8 +148,8 @@
                                                 <span><label class="sale-lb">- </label> ${p.sale}</span>
                                             </div>
 
+                                            <a href="CT_CTSP?masp=${p.id}">
 
-                                               title="${p.name}">
                                                 <img class="first-image  has-img"
                                                      alt=" ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG "
                                                      src="${p.img1}" />
@@ -166,7 +166,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="view-details">
-                                                    <a href="chitietsanpham.jsp" class="view-detail">
+                                                    <a href="CT_CTSP?masp=${p.id}" class="view-detail">
                                                         <span><i class="fa fa-clone"> </i></span>
                                                     </a>
                                                 </div>
@@ -181,7 +181,7 @@
                                         <div class="product-detail clearfix">
                                             <!-- sử dụng pull-left -->
                                             <h3 class="pro-name"><a
-                                                    href="chitietsanpham.jsp"
+                                                    href="CT_CTSP?masp=${p.id}"
                                                     title="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG">${p.name}</a></h3>
                                             <div class="pro-prices">
                                                 <p class="pro-price">${p.compare_price}</p>
@@ -259,7 +259,7 @@
                                             <span><label class="sale-lb">- </label> ${v.sale}</span>
                                         </div>
 
-                                        <a href="chitietsanpham.jsp"
+                                        <a href="CT_CTSP"
                                            title="${v.name}">
                                             <img class="first-image  has-img"
                                                  alt=" ĐỒNG HỒ NAM SKMEI CÓ LỊCH MỎ RỘNG "
@@ -278,7 +278,7 @@
                                                 </a>
                                             </div>
                                             <div class="view-details">
-                                                <a href="chitietsanpham."
+                                                <a href="CT_CTSP"
                                                    class="view-detail">
                                                     <span><i class="fa fa-clone"> </i></span>
                                                 </a>
@@ -295,7 +295,7 @@
                                     <div class="product-detail clearfix">
                                         <!-- sử dụng pull-left -->
                                         <h3 class="pro-name"><a
-                                                href="chitietsanpham.jsp"
+                                                href="CT_CTSP"
                                                 title="ĐỒNG HỒ NAM SKMEI CÓ LỊCH MỎ RỘNG">${v.name}</a></h3>
                                         <div class="pro-prices">
                                             <p class="pro-price">${v.compare_price}</p>

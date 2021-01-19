@@ -87,7 +87,7 @@ public class UserEntity {
 
 
         try {
-            String sql ="select * from users where username =? and password =?";
+            String sql ="select * from users where ten_tai_khoan =? and mat_khau =?";
             pre = ConnectionDB.connect(sql);
             pre.setString(1,username);
             pre.setString(2,password);

@@ -19,7 +19,7 @@ public class CT_Product_Top extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Collection<Product> values = new ProductEntity().getSaleTop();
+        Collection<Product> values = new ProductEntity().getSaleTop(10);
         request.setAttribute("list", values);
         request.getRequestDispatcher("products.jsp").forward(request, response);
     }
