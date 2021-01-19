@@ -1,4 +1,4 @@
-<%@ page import="model.Cart" %>
+
 <%@ page import="java.util.Collection" %>
 <%@ page import="bin.Product" %><%--
   Created by IntelliJ IDEA.
@@ -42,7 +42,7 @@
                         <table>
                             <thead>
                             <tr>
-                                <th class="image">&nbsp;</th>
+                                <th class="image">&nbsp;Hình ảnh</th>
                                 <th class="item">Tên sản phẩm</th>
                                 <th class="qty">Số lượng</th>
                                 <th class="price">Giá tiền</th>
@@ -50,44 +50,63 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <% Cart c= Cart.getCart(session);
-                            Collection<Product> data = c.getData();
-                            request.setAttribute("data", data);
-                            %>
-                            <c:forEach items="${data}" var ="d">
-                             <tr>
-                                <td class="image">
-                                    <div class="product_image">
-                                        <a href="chitietsanpham.html">
-                                            <img src="${d.img} " alt="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG" />
+                            <c:forEach items="${pp}" var="p">
+
+
+                                <tr>
+                                    <td class="image">
+                                        <div class="product_image">
+                                            <a href="CT_CTSP?masp=${p.id}">
+                                                <img src="${p.img1} " alt="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG" />
+
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="item">
+                                        <a href="CT_CTSP?masp=${p.id}">
+                                            <strong>${p.name}</strong>
 
                                         </a>
-                                    </div>
-                                </td>
-                                <td class="item">
-                                    <a href="chitietsanpham.html">
-                                        <strong>${d.name}</strong>
+                                    </td>
+                                    <td  class="qty">
+                                        <a href="<c:url value="/CT_Cart">
+                                            <c:param name="command" value="resetCart"/>
+                                            <c:param name="id" value="${p.id}"/>
+                                            <c:param name="tino" value="${p.quantity-1}"/>
+                                        </c:url>">
+                                            -
+                                        </a>
+                                        <input type="number" size="4" name="tino" min="1" id="updates_1012030836"  value="${p.quantity}" onfocus="this.select();" class="tc item-quantity" />
+                                        <a href="<c:url value="/CT_Cart">
+                                            <c:param name="command" value="resetCart"/>
+                                            <c:param name="id" value="${p.id}"/>
+                                            <c:param name="tino" value="${p.quantity+1}"/>
+                                        </c:url>">
+                                            +
+                                        </a>
+                                    </td>
+                                    <td class="price">${p.compare_price} VND</td>
+                                    <td class="remove">
+                                        <a href="<c:url value="/CT_Cart">
+                                            <c:param name="command" value="deleteCart"/>
+                                            <c:param name="id" value="${p.id}"/>
+                                        </c:url>">
+                                            Xóa
+                                        </a>
+                                    </td>
 
-                                    </a>
-                                </td>
-                                <td class="qty">
-                                    <input type="number" size="4" name="updates[]" min="1" id="updates_1012030836" value="${d.quantity}" onfocus="this.select();" class="tc item-quantity" />
-                                </td>
-                                <td class="price">${d.price}</td>
-                                <td class="remove">
-                                    <a href="/cart/change?line=1&quantity=0" class="cart">Xóa</a>
-                                </td>
-                            </tr>
-                                <td class="image">&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td class="text-center"><b>Tổng cộng:</b></td>
-                                <td class="price">
-								<span class="total">
-									<strong>${d.quantity *d.price}</strong>
-								</span>
-                                </td>
-                                <td>&nbsp;</td>
+                                </tr>
                             </c:forEach>
+                            <td class="image">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td class="text-center"><b>Tổng cộng:</b></td>
+                            <td class="price">
+								<span class="total">
+									<strong>${sum} VND</strong>
+								</span>
+                            </td>
+                            <td>&nbsp;</td>
+
                             </tbody>
                         </table>
                         <div class="row">
@@ -99,17 +118,22 @@
                             </div>
 
                             <div class="col-md-6 col-sm-6 col-xs-12 cart-buttons inner-right inner-left">
-                                <a href="phuongthucthanhtoan.html"></a>
+
                                 <div class="buttons clearfix">
-                                    <button  id="checkout" class="button-default" name="checkout" value="" >Thanh toán</button>
-                                    <button type="submit" id="update-cart" class="button-default" name="update"  value="" >Cập nhật</button>
+
+                                    <a id="checkout" class="button-default" name="checkout"  href="<c:url value="/CT_Cart">
+                                            <c:param name="command" value="thanhtoan"/>
+                                            <c:param name="id" value="${p.id}"/>
+                                        </c:url>" >
+                                        Thanh toán
+                                    </a>
                                 </div></a>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12  col-xs-12 continue-shop">
 
-                            <a  href="dssanpham.html">
+                            <a  href="CT_index">
                                 <i class="fa fa-reply"></i> Tiếp tục mua hàng</a>
                         </div>
                 </form>

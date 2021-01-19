@@ -149,7 +149,7 @@
                                             </div>
 
                                             <a href="CT_CTSP?masp=${p.id}">
-                                               
+
                                                 <img class="first-image  has-img"
                                                      alt=" ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG "
                                                      src="${p.img1}" />
@@ -161,8 +161,11 @@
                                             </a>
                                             <div class="actionss">
                                                 <div class="btn-cart-products">
-                                                    <a href="xemgiohang.jsp">
-                                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                    <a href="<c:url value="/CT_Cart">
+                                                            <c:param name="command" value="addCart"/>
+                                                            <c:param name="id" value="${p.id}"/>
+                                                            </c:url>">
+                                                            <i  class="fa fa-shopping-bag" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
                                                 <div class="view-details">

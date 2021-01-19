@@ -408,4 +408,38 @@ public class ProductEntity {
 
     }
 
+    public static Product getByid(int id) {
+        PreparedStatement st = null;
+        try {
+            String sql="select* from products where ma_sp = ? ";
+            st = ConnectionDB.connect(sql);
+            st.setInt(1,id);
+            ResultSet rs = st.executeQuery();
+            Product p;
+            if (rs.next()) {
+                p= new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                );
+                rs.close();
+                st.close();
+                return  p;
+            }
+            return null;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return  null;
+
+        }
+
+    }
+
 }
