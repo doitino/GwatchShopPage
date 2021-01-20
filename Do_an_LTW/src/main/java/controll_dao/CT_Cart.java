@@ -1,6 +1,8 @@
 package controll_dao;
 
+import bin.Customer;
 import bin.Product;
+import entity.CustomerEntity;
 import entity.ProductEntity;
 
 import javax.servlet.ServletException;
@@ -26,6 +28,7 @@ public class CT_Cart extends HttpServlet {
 
         String command = request.getParameter("command");
         String tino = request.getParameter("tino");
+        String username = null;
         int ma_sp;
         String id = request.getParameter("id");
         if (command.equals("addCart")) {
@@ -53,6 +56,18 @@ public class CT_Cart extends HttpServlet {
             session.setAttribute("pp", list);
             //      session.setAttribute("cart", cart);
             response.sendRedirect("CT_index");
+        }
+        if (command.equals("view")) {
+//            String username = request.getParameter("ten_dang_nhap");
+//            System.out.println(username+"thanhtoan.jsp");
+            HttpSession session = request.getSession();
+            username =request.getParameter("username");
+            System.out.println(username);
+
+            session.setAttribute("sum", sum(list));
+            session.setAttribute("pp", list);
+            session.setAttribute("ten_dang_nhap", username);
+            request.getRequestDispatcher("cart.jsp").forward(request,response);
         }
         if (command.equals("deleteCart")) {
 
@@ -91,12 +106,45 @@ public class CT_Cart extends HttpServlet {
         }
         if (command.equals("thanhtoan")) {
 
-            HttpSession session = request.getSession();
-            session.setAttribute("sum", sum(list));
-            session.setAttribute("pp", list);
-            // ta test xem gio hang co them duoc ko?
+            username =request.getParameter("username");
+            System.out.println(username);
+
+            if(username !=null && username!="") {
+                    System.out.println(username + "thanhtoan.jsp");
+                    HttpSession session = request.getSession();
+                    session.setAttribute("sum", sum(list));
+                    session.setAttribute("pp", list);
+                    // ta test xem gio hang co them duoc ko?
 //                session.setAttribute("cart", cart);
-            response.sendRedirect("thanhtoan.jsp");
+
+                    session.setAttribute("ten_dang_nhap", username);
+                    response.sendRedirect("thanhtoan.jsp");
+                }else{
+                if(username == null || username == "")
+                    response.sendRedirect("login.jsp");
+                }
+
+        }
+        if (command.equals("hoantat")) {
+            List<Product> listhd = new ArrayList<Product>();
+            for (int i=0;i<list.size();i++){
+                listhd.add( list.get(i));
+                list.remove(i);
+                i--;
+            }
+
+            System.out.println(listhd.size() + "-" + list.size());
+            String email = request.getParameter("username");
+
+            CustomerEntity ce = new CustomerEntity();
+            Customer c =ce.getByEmail(email);
+
+            HttpSession session = request.getSession();
+            session.setAttribute("c" ,c);
+            session.setAttribute("sum1", sum(listhd));
+            session.setAttribute("list1",listhd);
+//            rmALL(list);
+            request.getRequestDispatcher("hoantathoadon.jsp").forward(request, response);
         }
 
         // ta test xem gio hang co them duoc ko?
@@ -111,6 +159,14 @@ public class CT_Cart extends HttpServlet {
             }
         }
         return false;
+    }
+    public void rmALL(List<Product> list){
+        for (int i=0;i<list.size();i++
+        ) {
+            list.remove(i);
+            }
+
+
     }
     public long sum(List<Product> list){
         long sum=0;

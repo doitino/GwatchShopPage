@@ -124,6 +124,7 @@
                                     <a id="checkout" class="button-default" name="checkout"  href="<c:url value="/CT_Cart">
                                             <c:param name="command" value="thanhtoan"/>
                                             <c:param name="id" value="${p.id}"/>
+                                            <c:param name="username" value="${ten_dang_nhap}"/>
                                         </c:url>" >
                                         Thanh toán
                                     </a>

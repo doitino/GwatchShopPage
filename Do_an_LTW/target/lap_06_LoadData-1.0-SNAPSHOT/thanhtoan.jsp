@@ -169,7 +169,7 @@
 
 
 
-																			10000 VND
+																			Miễn phí
 
 
 
@@ -185,7 +185,7 @@
                                     <td class="total-line-name payment-due">
                                         <span class="payment-due-currency">VND</span>
                                         <span class="payment-due-price" data-checkout-payment-due-target="619400000">
-                                            ${sum +10000} VND
+                                            ${sum } VND
 															</span>
                                     </td>
                                 </tr>
@@ -298,14 +298,12 @@
                     </div>
                     <div class="step-footer">
 
-                        <a href="hoantatdonhang.html">
-                            <form id="form_next_step" accept-charset="UTF-8" method="post">
-                                <input name="utf8" type="hidden" value="✓">
-                                <button type="submit" class="step-footer-continue-btn btn">
-                                    <span class="btn-content">Hoàn tất đơn hàng</span>
-                                    <i class="btn-spinner icon icon-button-spinner"></i>
-                                </button>
-                            </form>
+                        <a href="<c:url value="/CT_Cart">
+                                     <c:param name="command" value="hoantat"/>
+                                    <c:param name="id" value="${p.id}"/>
+                                    <c:param name="username" value="${ten_dang_nhap}"/>
+                                    </c:url>">
+                            Hoàn tất thanh toán
                         </a>
                         <a href="hoantatdonhang.html" class="step-footer-previous-link">
                             <svg class="previous-link-icon icon-chevron icon" xmlns="http://www.w3.org/2000/svg" width="6.7" height="11.3" viewBox="0 0 6.7 11.3"><path d="M6.7 1.1l-1-1.1-4.6 4.6-1.1 1.1 1.1 1 4.6 4.6 1-1-4.6-4.6z"></path></svg>
