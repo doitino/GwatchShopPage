@@ -39,6 +39,11 @@ public class Data {
 //        data.put("029" ,new Product(29,"OGIVAL-OG30328GSK-T-WEB", "http://localhost:8080/Do_an_LTW/images/OGIVAL-OG30328GSK-T-WEB.jpg","http://localhost:8080/Do_an_LTW/images/OGIVAL-OG30328GSK-T-WEB_2.jpg","Đồng hồ Ogival" ,1650000,1780000,"10%",1));
 //        data.put("030" ,new Product(30,"Orient-King-Diver", "http://localhost:8080/Do_an_LTW/images/Orient-King-Diver-RA-AA0D04G0HB-shop.jpg","http://localhost:8080/Do_an_LTW/images/Orient-King-Diver-RA-AA0D04G0HB-shop_1.jpg","Đồng hồ Orient" ,1920000,2140000,"15%",1));
 //        data.put("031" ,new Product(31,"Orient-King-Diver", "http://localhost:8080/Do_an_LTW/images/dong-ho-srwatch-SG1073-1102TE-1000x1000.jpg","http://localhost:8080/Do_an_LTW/images/Orient-King-Diver-RA-AA0D04G0HB-shop_1.jpg","Đồng hồ Orient" ,1920000,2140000,"15%",1));
+
+//
+    }
+
    }
 
-}
+
+

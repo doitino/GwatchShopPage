@@ -45,6 +45,113 @@ public class ProductEntity {
         }
 
     }
+    public static List<Product> getAll(String ma_km) {
+        List<Product> re;
+        PreparedStatement ps = null;
+        String sql ="";
+        try {
+            sql ="select * from products where ma_loaisp like ? ";
+            ps = ConnectionDB.connect(sql);
+            ps.setString(1,"%"+ma_km+"%");
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                ));
+            }
+            System.out.println(re.size());
+            rs.close();
+            ps.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
+    //lấy sản phẩm được khuyến mãi
+    public static List<Product> getProductSale() {
+        List<Product> re;
+        PreparedStatement ps = null;
+        String sql ="";
+        try {
+            sql ="select * from products where sale not like ? ";
+            ps = ConnectionDB.connect(sql);
+            ps.setString(1,"0%");
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                ));
+            }
+            System.out.println(re.size());
+            rs.close();
+            ps.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
+    //lấy sản phẩm bán chạy nhất
+    public static List<Product> getSaleTop(int top) {
+        List<Product> re;
+        PreparedStatement ps = null;
+        String sql ="";
+        try {
+            sql ="select * from sale s join products p on s.ma_sp = p.ma_sp  where sldb > ? order by  sldb desc";
+            ps = ConnectionDB.connect(sql);
+            ps.setInt(1,top);
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getLong(12),
+                        rs.getLong(13),
+                        rs.getString(14),
+                        rs.getLong(15)
+                ));
+            }
+            System.out.println(re.size());
+            rs.close();
+            ps.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
     //Thêm nhiều sản phẩm vào database
     public static int insertAll(Collection<Product> data){
         Statement st = null;
@@ -131,7 +238,7 @@ public class ProductEntity {
 
             Class.forName("com.mysql.jdbc.Driver");
             con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-            String sql ="insert into products (id,name,img1,img2,brand ,price,compare_price,sale) values (?,?,?,?,?,?,?,?)" ;
+            String sql ="insert into products (ma_sp,ten_sp,img1,img2,brand ,price,compare_price,sale) values (?,?,?,?,?,?,?,?)" ;
             pre = con.prepareStatement(sql);
             pre.setInt(1,pro.getId());
             pre.setString(2,pro.getName());
@@ -156,7 +263,7 @@ public class ProductEntity {
     public static void deleteProduct(int id){
         PreparedStatement ps =null ;
         try {
-            String sql = "Delete From products where id =?";
+            String sql = "Delete From products where ma_sp =?";
             ps = ConnectionDB.connect(sql);
             ps.setInt(1,id);
 
@@ -171,7 +278,7 @@ public class ProductEntity {
         Connection con=null;
         PreparedStatement ps = null;
         try {
-            String sql = "select * from products where id = ?";
+            String sql = "select * from products where ma_sp = ?";
             ps = ConnectionDB.connect(sql);
             ps.setInt(1, idUpdate);
             System.out.println(sql);
@@ -179,7 +286,11 @@ public class ProductEntity {
             pro = new Product();
             while (rs.next()) {
                 int id= rs.getInt(1);
+
+                String ma_loai =rs.getString(2);
+
                 String ma_loaisp = rs.getString(2);
+
                 String name =rs.getString(3);
                 String img1 = rs.getString(4);
                 String img2 = rs.getString(5);
@@ -188,7 +299,11 @@ public class ProductEntity {
                 Long com =rs.getLong(8);
                 String sale = rs.getString(9) ;
                 Long quanlity = rs.getLong(10);
+
+                pro= new Product(id,ma_loai,name,img1,img2,brand,price,com,sale,quanlity);
+
                 pro= new Product(id,ma_loaisp,name,img1,img2,brand,price,com,sale,quanlity);
+
             }
             rs.close();
             ps.close();
@@ -204,7 +319,7 @@ public class ProductEntity {
         PreparedStatement pre = null;
         try {
 
-            String sql ="update products set name=?,img1=?,img2=?,brand=? ,price=?,compare_price=?,sale=? where id = ?" ;
+            String sql ="update products set ten_sp=?,img1=?,img2=?,brand=? ,price=?,compare_price=?,sale=? where ma_sp = ?" ;
             pre= ConnectionDB.connectupdate(sql);
             pre.setString(1,pro.getName());
             pre.setString(2,pro.getImg1());
@@ -229,7 +344,7 @@ public class ProductEntity {
         List<Product> re;
         PreparedStatement st = null;
         try {
-            String sql = "select * from products where name like ?";
+            String sql = "select * from products where ten_sp like ?";
             st = ConnectionDB.connect(sql);
             st.setString(1, "%" + name + "%");
             System.out.println(sql);
@@ -261,7 +376,7 @@ public class ProductEntity {
     public Product getById(String id) {
         PreparedStatement s = null;
         try{
-            String sql="select * from products where id= ?";
+            String sql="select * from products where ma_sp= ?";
             s= ConnectionDB.connect(sql);
             s.setString(1,id);
             ResultSet rs = s.executeQuery();
@@ -289,6 +404,40 @@ public class ProductEntity {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             return null;
+        }
+
+    }
+
+    public static Product getByid(int id) {
+        PreparedStatement st = null;
+        try {
+            String sql="select* from products where ma_sp = ? ";
+            st = ConnectionDB.connect(sql);
+            st.setInt(1,id);
+            ResultSet rs = st.executeQuery();
+            Product p;
+            if (rs.next()) {
+                p= new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                );
+                rs.close();
+                st.close();
+                return  p;
+            }
+            return null;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return  null;
+
         }
 
     }

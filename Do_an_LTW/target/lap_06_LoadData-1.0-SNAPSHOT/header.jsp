@@ -462,11 +462,11 @@
                         <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
                             <aside class="top-info">
                                 <div class="cart-info hidden-xs">
-                                    <a class="cart-link" href="cart.jsp">
+                                    <a class="cart-link" href="CT_ViewCart?username=${ten_dang_nhap}">
 												<span class="icon-cart">
 												</span>
                                         <div class="cart-number">
-                                            5
+
                                         </div>
                                     </a>
                                     <div class="cart-view clearfix" style="display: none;">
@@ -544,7 +544,7 @@
                                                 <td class="text-right" id="total-view-cart">3,398,000₫</td>
                                             </tr>
                                             <tr>
-                                                <td><a href="cart.jsp" class="linktocart">Xem giỏ hàng</a>
+                                                <td><a href="CT_ViewCart?username=${ten_dang_nhap}" class="linktocart">Xem giỏ hàng</a>
                                                 </td>
                                                 <td><a href="phuongthucthanhtoan.html" class="linktocheckout">Thanh
                                                     toán</a></td>
@@ -650,7 +650,7 @@
 
 
                                 <li>
-                                    <a href="CT_index_Webapp" class=" current" title="Trang chủ">
+                                    <a href="CT_index" class=" current" title="Trang chủ">
                                         <span>Trang chủ</span>
                                     </a>
                                 </li>
@@ -658,7 +658,7 @@
 
 
                                 <li class="dropdown">
-                                    <a href="products.jsp" title="Đồng hồ nam" class="">
+                                    <a href="CT_Product_Nam" title="Đồng hồ nam" class="">
                                         <span>Đồng hồ nam</span>
                                     </a>
                                     <ul class="dropdown-menu" role="menu">
@@ -701,7 +701,7 @@
 
 
                                 <li class="dropdown">
-                                    <a href="products.jsp" title="Đồng hồ nữ" class="">
+                                    <a href="CT_Product_Nu" title="Đồng hồ nữ" class="">
                                         <span>Đồng hồ nữ</span>
                                     </a>
                                     <ul class="dropdown-menu" role="menu">

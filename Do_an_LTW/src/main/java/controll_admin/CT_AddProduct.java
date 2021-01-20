@@ -36,6 +36,7 @@ public class CT_AddProduct extends HttpServlet {
             Product pro = new Product();
 
             if(id!=null || name!=null || img1 !=null ||img2 !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
+                pro.setId(Integer.parseInt(request.getParameter("id")));
                 pro.setName(request.getParameter("name"));
                 pro.setImg1(request.getParameter("img1"));
                 pro.setImg2(request.getParameter("img2"));

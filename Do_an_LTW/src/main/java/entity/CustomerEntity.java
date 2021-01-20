@@ -41,6 +41,38 @@ public class CustomerEntity {
         }
 
     }
+    //Lấy 1 khách hàng bởi email
+    public Customer getByEmail(String email) {
+        Customer c = null;
+        PreparedStatement pre = null;
+        try {
+            pre = ConnectionDB.connect("select * from customers where email = ?");
+            pre.setString(1,email);
+            ResultSet rs = pre.executeQuery();
+            
+            while (rs.next()) {
+                c = new Customer(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8)
+
+                );
+            }
+            rs.close();
+            pre.close();
+            return c;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new Customer();
+
+        }
+
+    }
     //Lấy tổng số sản phẩm
     public static int count() {
         PreparedStatement pre = null;
@@ -121,7 +153,7 @@ public class CustomerEntity {
         boolean check = false;
         PreparedStatement pre;
         try {
-            String sql = "select * from customers where email =? and password =?";
+            String sql = "select * from customers where email =? and mat_khau =?";
             pre = ConnectionDB.connect(sql);
             pre.setString(1, email);
             pre.setString(2, password);
