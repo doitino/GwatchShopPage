@@ -1,8 +1,12 @@
 package controll_dao;
 
+import bin.CTHD;
 import bin.Customer;
+import bin.HoaDon;
 import bin.Product;
+import entity.CTHDEntity;
 import entity.CustomerEntity;
+import entity.HoaDonEntity;
 import entity.ProductEntity;
 
 import javax.servlet.ServletException;
@@ -126,6 +130,7 @@ public class CT_Cart extends HttpServlet {
 
         }
         if (command.equals("hoantat")) {
+            // copy list và xóa giỏ hàng
             List<Product> listhd = new ArrayList<Product>();
             for (int i=0;i<list.size();i++){
                 listhd.add( list.get(i));
@@ -134,10 +139,38 @@ public class CT_Cart extends HttpServlet {
             }
 
             System.out.println(listhd.size() + "-" + list.size());
+            // copy list và xóa giỏ hàng
+
+            //Lấy thông tin khách hàng
             String email = request.getParameter("username");
 
             CustomerEntity ce = new CustomerEntity();
             Customer c =ce.getByEmail(email);
+
+            //insert hoa don
+            HoaDonEntity hd = new HoaDonEntity();
+
+            int ma_hd = 1001 + hd.count();
+            int ma_kh = c.getMa_kh();
+            String ngay_mua ="12/12/2020";
+            Long tri_gia = sum(listhd);
+            String trang_thai ="Mới";
+            HoaDon h = new HoaDon(ma_hd,ma_kh,ngay_mua,tri_gia,trang_thai);
+            hd.addone(h);
+            System.out.println("Thêm hóa đơn thành công");
+
+            //Insert Chi tiết hóa đơn
+            CTHDEntity ct = new CTHDEntity();
+            List<CTHD> listCTHD = new ArrayList<CTHD>();
+
+            for (int i=0;i<listhd.size();i++){
+                CTHD cthd=  new CTHD(ma_hd,listhd.get(i).getId(), (int) listhd.get(i).getQuantity());
+                listCTHD.add(cthd);
+            }
+
+            ct.insertAll(listCTHD);
+            System.out.println("Thêm chi tiết hóa đơn thành công");
+
 
             HttpSession session = request.getSession();
             session.setAttribute("c" ,c);

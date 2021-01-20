@@ -1,13 +1,9 @@
 package entity;
 
 import bin.HoaDon;
-import bin.User;
 import database.ConnectionDB;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -91,5 +87,32 @@ public class HoaDonEntity {
             return new LinkedList<>();
         }
 
+    }
+    // Thêm 1 hóa đơn mới vào database
+    public static int addone(HoaDon hd){
+        Connection con;
+        PreparedStatement pre = null;
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+            String sql ="insert into hoadon (ma_hd,ma_kh,ngay_mua,tri_gia,trang_thai ) values (?,?,?,?,?)" ;
+            pre = con.prepareStatement(sql);
+            pre.setInt(1,hd.getMa_hd());
+            pre.setInt(2,hd.getMa_kh());
+            pre.setString(3,hd.getNgay_mua());
+            pre.setLong(4,hd.getTri_gia());
+            pre.setString(5,hd.getTrang_thai());
+
+
+            pre.executeUpdate();
+
+            return 0;
+        } catch (ClassNotFoundException classNotFoundException) {
+            classNotFoundException.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return 0;
     }
 }

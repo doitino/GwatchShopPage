@@ -1,12 +1,14 @@
 package entity;
 
-import bin.HienThiCTHD;
-import bin.HoaDon;
+import bin.*;
 import database.ConnectionDB;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -43,10 +45,42 @@ public class CTHDEntity {
         }
 
     }
+    //Thêm nhiều sản phẩm vào database
+    public static int insertAll(Collection<CTHD> data){
+        PreparedStatement pre = null;
+        try {
+            String sql ="insert into cthd (ma_hd,ma_sp,so_luong) values ";
+            int i =0;
+            for (CTHD d:data) {
+
+
+                if(++i<data.size())
+                    sql +="(" +d.getMa_hd()+"," +d.getMa_sp()+","  +d.getSo_luong()+"),";
+                else
+                    sql +="(" +d.getMa_hd()+"," +d.getMa_sp()+","  +d.getSo_luong()+")";
+            }
+            pre = ConnectionDB.connect( sql);
+
+        //    pre.setString(1,sql);
+
+
+            pre.executeUpdate();
+              System.out.println(sql);
+            pre.close();
+            return 0;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return 0;
+
+        }
+    }
 
     public static void main(String[] args) {
         CTHDEntity c = new CTHDEntity();
-        c.getAll(1001);
+        List<CTHD> list = new ArrayList<>();
+        list.add(new CTHD(1001,3,2));
+        list.add(new CTHD(1001,2,2));
+        c.insertAll(list);
     }
 
 }
