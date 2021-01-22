@@ -24,10 +24,10 @@
         </div>
         <form action="CT_resetpassword" method="post">
             <li style="color: red"><%=err%></li>
-            <li><input type="text" class="text" value="Username"
+            <li><input type="text" class="text" value="email"
                        onfocus="this.value = '';"
-                       onblur="if (this.value == '') {this.value = 'Username';}"
-                       name="username"><a href="#" class=" icon user"></a></li>
+                       onblur="if (this.value == '') {this.value = 'email';}"
+                       name="email"><a href="#" class=" icon user"></a></li>
 
             <div class="p-container">
 

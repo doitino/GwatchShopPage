@@ -1,5 +1,6 @@
 package controll_dao;
 
+import bin.ChangePass;
 import entity.ResetPassword;
 
 import javax.servlet.ServletException;
@@ -7,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Random;
@@ -22,11 +24,18 @@ public class CT_resetpassword extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
 
-        String user = request.getParameter("username");
-        if (user != null) {
-            request.setAttribute("user_forget",user);
-            ResetPassword.sendForgetPasswordMail(user, "http://localhost:8080/Do_an_LTW/forgetpassword.jsp");
-            request.getRequestDispatcher("CT_Login").forward(request, response);
+        String email = request.getParameter("email");
+
+        ResetPassword rs = new ResetPassword();
+        String code = rs.getRandom();
+
+        ChangePass changePass = new ChangePass(email, code);
+        boolean test = rs.sendForgetPasswordMail(changePass);
+
+        if (test) {
+            HttpSession session = request.getSession();
+            session.setAttribute("authcode", changePass);
+            response.sendRedirect("verify.jsp");
         }
 
     }

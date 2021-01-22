@@ -44,7 +44,7 @@
                 <input type="submit" value="SIGN IN">
             </div>
             <div>
-                <a href="changePassword.jsp">foget password?</a>
+                <a href="changePassword.jsp">Đổi mật khẩu?</a>
             </div>
             <div class="social-icons">
                 <p>Bạn có thể đăng nhập bằng tài khoản:</p>

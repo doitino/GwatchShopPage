@@ -3,7 +3,7 @@ package controll_dao;
 import bin.Product;
 import entity.ProductEntity;
 import entity.ProductNew;
-import sun.plugin.dom.core.Element;
+//import sun.plugin.dom.core.Element;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
