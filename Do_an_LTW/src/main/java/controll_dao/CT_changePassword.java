@@ -16,13 +16,14 @@ public class CT_changePassword extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String email =request.getParameter("email");
         String current = request.getParameter("current");
         String newPass = request.getParameter("new");
         String confirmPass = request.getParameter("confirm");
 
-        if(newPass == confirmPass){
-            ChangePassword.changePass(newPass);
-            request.getRequestDispatcher("CT_Login").forward(request,response);
+        if(newPass.equals(confirmPass)){
+            ChangePassword.changePass(newPass , email,current);
+            request.getRequestDispatcher("login.jsp").forward(request,response);
         }
     }
 }

@@ -238,16 +238,18 @@ public class ProductEntity {
 
             Class.forName("com.mysql.jdbc.Driver");
             con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-            String sql ="insert into products (ma_sp,ten_sp,img1,img2,brand ,price,compare_price,sale) values (?,?,?,?,?,?,?,?)" ;
+            String sql ="insert into products (ma_sp,ma_loaisp,ten_sp,img1,img2,brand ,price,compare_price,sale,quantity) values (?,?,?,?,?,?,?,?,?,?)" ;
             pre = con.prepareStatement(sql);
             pre.setInt(1,pro.getId());
-            pre.setString(2,pro.getName());
-            pre.setString(3,pro.getImg1());
-            pre.setString(4,pro.getImg2());
-            pre.setString(5,pro.getBrand());
-            pre.setLong(6,pro.getPrice());
-            pre.setLong(7,pro.getCompare_price());
-            pre.setString(8,pro.getSale());
+            pre.setString(2,pro.getMa_loaisp());
+            pre.setString(3,pro.getName());
+            pre.setString(4,pro.getImg1());
+            pre.setString(5,pro.getImg2());
+            pre.setString(6,pro.getBrand());
+            pre.setLong(7,pro.getPrice());
+            pre.setLong(8,pro.getCompare_price());
+            pre.setString(9,pro.getSale());
+            pre.setLong(10,pro.getQuantity());
 
             pre.executeUpdate();
 
@@ -319,16 +321,17 @@ public class ProductEntity {
         PreparedStatement pre = null;
         try {
 
-            String sql ="update products set ten_sp=?,img1=?,img2=?,brand=? ,price=?,compare_price=?,sale=? where ma_sp = ?" ;
+            String sql ="update products set ma_loaisp=?, ten_sp=?,img1=?,img2=?,brand=? ,price=?,compare_price=?,sale=? where ma_sp = ?" ;
             pre= ConnectionDB.connectupdate(sql);
-            pre.setString(1,pro.getName());
-            pre.setString(2,pro.getImg1());
-            pre.setString(3,pro.getImg2());
-            pre.setString(4,pro.getBrand());
-            pre.setLong(5,pro.getPrice());
-            pre.setLong(6,pro.getCompare_price());
-            pre.setString(7,pro.getSale());
-            pre.setInt(8,pro.getId());
+            pre.setString(1,pro.getMa_loaisp());
+            pre.setString(2,pro.getName());
+            pre.setString(3,pro.getImg1());
+            pre.setString(4,pro.getImg2());
+            pre.setString(5,pro.getBrand());
+            pre.setLong(6,pro.getPrice());
+            pre.setLong(7,pro.getCompare_price());
+            pre.setString(8,pro.getSale());
+            pre.setInt(9,pro.getId());
             System.out.println(sql);
             pre.executeUpdate();
 

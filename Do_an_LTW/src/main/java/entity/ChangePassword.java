@@ -8,18 +8,18 @@ import java.sql.ResultSet;
 
 
 public class ChangePassword {
-    public static void changePass(String newpass ) {
+    public static void changePass(String newpass ,String user,String pass ) {
 
 
         PreparedStatement pre = null;
         try {
-            String sql = "update * from customers where password = '"+newpass+"'";
-            pre = ConnectionDB.connect(sql);
-            ResultSet rs = pre.executeQuery();
+//            String sql = "update customers set mat_khau =? where email =? and mat_khau =?";
+            pre = ConnectionDB.connect("update customers set mat_khau =? where email =? and mat_khau =?");
+            pre.setString(1,newpass);
+            pre.setString(2,user);
+            pre.setString(3,pass);
+            pre.executeUpdate();
 
-            while (rs.next()) {
-                newpass = rs.getString(3);
-            }
 
 
         } catch (Exception e) {

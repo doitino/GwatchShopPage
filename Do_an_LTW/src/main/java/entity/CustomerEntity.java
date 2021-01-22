@@ -73,6 +73,22 @@ public class CustomerEntity {
         }
 
     }
+    //update password cho khách hàng
+    public static int updatePassword(String username ,String passNew) {
+        PreparedStatement pre = null;
+        try {
+
+            pre = ConnectionDB.connect("update customers set mat_khau=? where email = ?");
+            pre.setString(1,passNew);
+            pre.setString(2,username);
+            pre.executeUpdate();
+
+            return 0;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
     //Lấy tổng số sản phẩm
     public static int count() {
         PreparedStatement pre = null;

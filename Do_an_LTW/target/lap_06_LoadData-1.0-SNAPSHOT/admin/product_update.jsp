@@ -125,12 +125,12 @@
                             <div style="margin-left: 400px" class="register-main">
                                 <div style="margin-left: -200px;" class="col-md-6 account-left label-input-update">
                                     <label class="label-update">Mã sản phẩm :<input name="id" placeholder="id" type="number" value="${detail.id}"></label>
+                                    <label class="label-update">Mã loại sản phẩm :<input name="ma_loai" placeholder="ma loai" type="text" value="${detail.ma_loaisp}"></label>
                                     <label class="label-update">Tên sản phẩm :<input name="name" placeholder="name" type="text" value="${detail.name}"></label>
                                     <label class="label-update">Url hình ảnh 1 :<input name="img1" placeholder="img1" type="text" value="${detail.img1}"></label>
                                     <label class="label-update">Url hình ảnh 2 :<input name="img2" placeholder="img2" type="text" value="${detail.img2}"></label>
                                     <label class="label-update">Thương hiệu sản phẩm :<input name="brand" placeholder="brand" type="text" value="${detail.brand}"></label>
                                     <label class="label-update">Giá sản phẩm :<input name="price" placeholder="price" type="number" value="${detail.price}"></label>
-                                    <label class="label-update">Giá gốc :<input name="pricesale" placeholder="pricesale" type="number" value="${detail.compare_price}"></label>
                                     <label class="label-update">Phần trăm sale :<input name="sale" placeholder="sale" type="text" value="${detail.sale}"></label>
                                 </div>
 

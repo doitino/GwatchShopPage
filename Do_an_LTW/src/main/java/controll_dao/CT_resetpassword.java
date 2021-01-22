@@ -24,8 +24,8 @@ public class CT_resetpassword extends HttpServlet {
 
         String user = request.getParameter("username");
         if (user != null) {
-
-            ResetPassword.sendForgetPasswordMail(user, "http://localhost:8080/Do_an_LTW/changePassword.jsp");
+            request.setAttribute("user_forget",user);
+            ResetPassword.sendForgetPasswordMail(user, "http://localhost:8080/Do_an_LTW/forgetpassword.jsp");
             request.getRequestDispatcher("CT_Login").forward(request, response);
         }
 

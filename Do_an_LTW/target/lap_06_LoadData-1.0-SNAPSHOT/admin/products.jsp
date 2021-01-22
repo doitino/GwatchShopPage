@@ -139,12 +139,13 @@
 
                             <tr>
                                 <th>Mã </th>
+                                <th>Mã loại</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Hình ảnh 1</th>
                                 <th>Hình ảnh 2</th>
                                 <th>Thương iệu</th>
                                 <th>Giá sản phẩm</th>
-                                <th>Nhà cung cấp</th>
+                                <th>Giá sau giảm</th>
                                 <th>Ngày cung cấp</th>
                                 <th>Thao tác</th>
 
@@ -152,16 +153,17 @@
                             </tr>
                             <cc:forEach items="${list}" var="p">
                             <tr>
-                                <td name>${p.id}</td>
+                                <td >${p.id}</td>
+                                <td >${p.ma_loaisp}</td>
                                 <td>${p.name}</td>
                                 <td><img src="${p.img1}" style="width: 50px;height: 50px;">
                                 </td>
                                 <td><img src="${p.img2}" style="width: 50px;height: 50px;">
                                 </td>
                                 <td>${p.brand}</td>
-                                <td>${p.price}</td>
-                                <td>${p.compare_price}</td>
-                                <td>${p.sale}</td>
+                                <td>${p.price}VND</td>
+                                <td>${p.compare_price}VND</td>
+                                <td> - ${p.sale} %</td>
 
                                 <td><a  class="btn btn-default" class="list-group-item" href="CT_GetProductUpdate?id=${p.id}">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>

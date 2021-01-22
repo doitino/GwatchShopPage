@@ -22,8 +22,12 @@
             <h1>Đổi mật khẩu</h1>
             <span></span>
         </div>
-        <form action="CT_changePassword" method="post">
+        <form action="CT_changePassword?username=${user_forget}" method="post">
             <li style="color: red"><%=err%></li>
+            <li><input type="text" class="text" value="Email"
+                       onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Email';}"
+                       name="email"><a href="#" class=" icon user"></a></li>
             <li><input type="text" class="text" value="Current Password"
                        onfocus="this.value = '';"
                        onblur="if (this.value == '') {this.value = 'Current Password';}"

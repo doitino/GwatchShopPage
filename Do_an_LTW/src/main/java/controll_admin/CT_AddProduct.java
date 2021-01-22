@@ -24,26 +24,30 @@ public class CT_AddProduct extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             String id = request.getParameter("id");
+            String ma_loai = request.getParameter("ma_loai");
             String name = request.getParameter("name");
             String img1 =request.getParameter("img1");
             String img2 =request.getParameter("img2");
             String sale = request.getParameter("sale");
             String price = request.getParameter("price");
-            String pricesale = request.getParameter("pricesale");
+          //  String pricesale = request.getParameter("pricesale");
             String brand = request.getParameter("brand");
 
 
             Product pro = new Product();
 
-            if(id!=null || name!=null || img1 !=null ||img2 !=null || sale !=null || price !=null ||pricesale!=null || brand!=null) {
-                pro.setId(Integer.parseInt(request.getParameter("id")));
-                pro.setName(request.getParameter("name"));
-                pro.setImg1(request.getParameter("img1"));
-                pro.setImg2(request.getParameter("img2"));
-                pro.setBrand(request.getParameter("brand"));
-                pro.setPrice(Long.parseLong(request.getParameter("price")));
-                pro.setCompare_price(Long.parseLong(request.getParameter("pricesale")));
-                pro.setSale(request.getParameter("sale"));
+            if(id!=null ||ma_loai!=null|| name!=null || img1 !=null ||img2 !=null || sale !=null || price !=null || brand!=null) {
+                pro.setId(Integer.parseInt(id));
+                pro.setMa_loaisp(ma_loai);
+                pro.setName(name);
+                pro.setImg1(img1);
+                pro.setImg2(img2);
+                pro.setBrand(brand);
+                pro.setPrice(Long.parseLong(price));
+                long a = (long) ( Long.parseLong(price)-Long.parseLong(price)*(Integer.parseInt(sale)*0.01));
+                pro.setCompare_price(a);
+                pro.setSale(sale);
+                pro.setQuantity(1);
 
                 ProductEntity.addone(pro);
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CT_Product");
