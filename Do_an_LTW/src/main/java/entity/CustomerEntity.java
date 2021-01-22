@@ -73,6 +73,29 @@ public class CustomerEntity {
         }
 
     }
+    //Lấy 1 khách hàng bởi email
+    public int getByEmail1(String email) {
+        int a = 0;
+        PreparedStatement pre = null;
+        try {
+            pre = ConnectionDB.connect("select * from customers where email = ?");
+            pre.setString(1, email);
+            ResultSet rs = pre.executeQuery();
+
+            while (rs.next()) {
+                a = rs.getByte(1);
+            }
+            rs.close();
+            pre.close();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+
+
+        }
+        return a;
+
+    }
     //update password cho khách hàng
     public static int updatePassword(String username ,String passNew) {
         PreparedStatement pre = null;

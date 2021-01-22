@@ -348,19 +348,22 @@
                                 <div id="binhluan">
                                     <div class="title-bl">
                                         <h2>Bình luận</h2>
+                                        <label  style="background-color: #e6e6e6;padding-bottom: 30px ;border: 2px solid rgb(207, 206, 206);margin-bottom: 20px;width: 100%">
+                                            <p>Đời</p>
+                                            <h6>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h6>
+                                        </label >
+                                        <form action="CT_Binh_Luan">
+                                            <input  style="display: none" name="id" value="${p.id}">
+                                            <input style="display: none" name="username" value=" ${ten_dang_nhap}">
+                                            <label  style="border: 2px solid rgb(207, 206, 206);" ><textarea name="a1"  cols="60" rows="5"></textarea></label>
+
+                                            <input style="margin-right: 600px;padding: 10px;padding-left: 15px;padding-right: 15px" type="submit"  value="Gửi">
+
+                                        </form>
+
                                     </div>
                                     <div class="product-comment-fb">
-                                        <div id="fb-root"></div>
-                                        <div class="fb-comments" data-href="http://happylive.vn/products/dong-ho-nam-tevise-1952-chay-co-cuc-chat" data-numposts="5" width="100%" data-colorscheme="light"></div>
-                                        <!-- script comment fb -->
-                                        <script type="text/javascript">(function(d, s, id) {
-                                            var js, fjs = d.getElementsByTagName(s)[0];
-                                            if (d.getElementById(id)) return;
-                                            js = d.createElement(s); js.id = id;
-                                            js.src = "./connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
-                                            fjs.parentNode.insertBefore(js, fjs);
-                                        }(document, 'script', 'facebook-jssdk'));
-                                        </script>
+
                                     </div>
                                 </div>
 

@@ -22,6 +22,7 @@ public class CT_CTSP extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("masp");
+        String tdn = request.getParameter("username");
         Collection<Product> values = new ProductEntity().getSaleTop(25);
 
         System.out.println();
@@ -34,7 +35,8 @@ public class CT_CTSP extends HttpServlet {
             CTSP_Entity ctsp = new CTSP_Entity();
             CTSP c = ctsp.getCTSP(ma);
 
-            request.setAttribute("ctsp", c);
+            request.setAttribute("username", id);
+            request.setAttribute("ctsp", tdn);
             request.setAttribute("list", values);
             request.setAttribute("p", product);
             request.getRequestDispatcher("chitietsanpham.jsp").forward(request,response);

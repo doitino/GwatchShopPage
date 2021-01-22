@@ -22,11 +22,9 @@ public class CT_index extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
-        String dn =request.getParameter("dn");
 
-        if(dn==null){
-            request.setAttribute("dn", "Đăng nhập");
-        }
+
+
         ProductEntity dao = new ProductEntity();
         String indexs = request.getParameter("index");
         int index =0 ;

@@ -19,7 +19,7 @@
 
             <span></span>
         </div>
-        <form action="CT_Login" method="post">
+        <form action="CT_Login?dn=${dn}" method="post">
             <% String mess="";
                 if (request.getAttribute("mess") != null){
                     mess= (String) request.getAttribute("mess");%>

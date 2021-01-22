@@ -262,7 +262,9 @@
                                             <span><label class="sale-lb">- </label> ${v.sale}</span>
                                         </div>
 
-                                        <a href="CT_CTSP"
+                                        <a href="<c:url value="/CT_CTSP">
+                                            <c:param name="username" value="${ten_dang_nhap}"/>
+                                        </c:url>"
                                            title="${v.name}">
                                             <img class="first-image  has-img"
                                                  alt=" ĐỒNG HỒ NAM SKMEI CÓ LỊCH MỎ RỘNG "
@@ -281,7 +283,9 @@
                                                 </a>
                                             </div>
                                             <div class="view-details">
-                                                <a href="CT_CTSP"
+                                                <a href="<c:url value="/CT_CTSP">
+                                                <c:param name="username" value="${ten_dang_nhap}"/>
+                                            </c:url>"
                                                    class="view-detail">
                                                     <span><i class="fa fa-clone"> </i></span>
                                                 </a>
@@ -297,8 +301,9 @@
 
                                     <div class="product-detail clearfix">
                                         <!-- sử dụng pull-left -->
-                                        <h3 class="pro-name"><a
-                                                href="CT_CTSP"
+                                        <h3 class="pro-name"><a href="<c:url value="/CT_CTSP">
+                                            <c:param name="username" value="${ten_dang_nhap}"/>
+                                        </c:url>"
                                                 title="ĐỒNG HỒ NAM SKMEI CÓ LỊCH MỎ RỘNG">${v.name}</a></h3>
                                         <div class="pro-prices">
                                             <p class="pro-price">${v.compare_price}</p>

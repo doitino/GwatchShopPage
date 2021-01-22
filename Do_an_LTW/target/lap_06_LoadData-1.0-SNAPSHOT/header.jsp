@@ -485,55 +485,33 @@
                                         </table>
                                         <table id="cart-view">
 
-
+                                            <c:forEach items="${pp}" var="p">
                                             <tr>
                                                 <td class="img">
                                                     <a href="ProductDetails.jsp">
-                                                        <img src="./product.hstatic.net/1000177652/product/1_e0ed7c0240734782a8268793dce0b9b8_small.jpg "
+                                                        <img src="${p.img1} "
                                                              alt="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG" />
                                                     </a>
                                                 </td>
                                                 <td>
                                                     <a class="pro-title-view" href="ProductDetails.jsp"
-                                                       title="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG">ĐỒNG HỒ NAM SKMEI
-                                                        KIM XANH DƯƠNG</a>
+                                                       title="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG">${p.name}</a>
                                                     <span class="variant">
 
 															</span>
-                                                    <span class="pro-quantity-view">2</span>
-                                                    <span class="pro-price-view">499,000₫</span>
+                                                    <span class="pro-quantity-view">${p.quantity}</span>
+                                                    <span class="pro-price-view">${p.compare_price}</span>
                                                     <span class="remove_link remove-cart">
-																<a href='javascript:void(0);'
-                                                                   onclick='deleteCart(1012030836)'><i
+																<a href="<c:url value="/CT_Cart">
+                                            <c:param name="command" value="deleteCartIndex"/>
+                                            <c:param name="id" value="${p.id}"/>
+                                        </c:url>">
+                                                                    <i
                                                                         class='fa fa-times'></i></a>
 															</span>
                                                 </td>
                                             </tr>
-
-                                            <tr>
-                                                <td class="img">
-                                                    <a href="ProductDetails.jsp">
-                                                        <img src="./product.hstatic.net/1000177652/product/7_0590d26379fb4da3ba8d9b57564ee6b0_small.jpg "
-                                                             alt="ĐỒNG HỒ NAM TEVISE 1952 CHẠY CƠ CỰC CHẤT" />
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a class="pro-title-view"
-                                                       href="ProductDetails.jsp"
-                                                       title="ĐỒNG HỒ NAM TEVISE 1952 CHẠY CƠ CỰC CHẤT">ĐỒNG HỒ NAM
-                                                        TEVISE 1952 CHẠY CƠ CỰC CHẤT</a>
-                                                    <span class="variant">
-
-															</span>
-                                                    <span class="pro-quantity-view">3</span>
-                                                    <span class="pro-price-view">800,000₫</span>
-                                                    <span class="remove_link remove-cart">
-																<a href='javascript:void(0);'
-                                                                   onclick='deleteCart(1012006173)'><i
-                                                                        class='fa fa-times'></i></a>
-															</span>
-                                                </td>
-                                            </tr>
+                                            </c:forEach>
 
 
                                         </table>
@@ -541,13 +519,21 @@
                                         <table class="table-total">
                                             <tr>
                                                 <td class="text-left">TỔNG TIỀN:</td>
-                                                <td class="text-right" id="total-view-cart">3,398,000₫</td>
+                                                <td class="text-right" id="total-view-cart">${sum} VND</td>
                                             </tr>
                                             <tr>
                                                 <td><a href="CT_ViewCart?username=${ten_dang_nhap}" class="linktocart">Xem giỏ hàng</a>
                                                 </td>
-                                                <td><a href="phuongthucthanhtoan.html" class="linktocheckout">Thanh
-                                                    toán</a></td>
+                                                <td>
+                                                    <a  class="linktocheckout" name="checkout"  href="<c:url value="/CT_Cart">
+                                            <c:param name="command" value="thanhtoan"/>
+                                            <c:param name="id" value="${p.id}"/>
+                                            <c:param name="username" value="${ten_dang_nhap}"/>
+                                        </c:url>" >
+                                                    Thanh toán
+                                                </a>
+                                    </a>
+                                                </td>
                                             </tr>
                                         </table>
                                     </div>
@@ -567,7 +553,7 @@
 
 
                                             <li><a class="reg" href="register.jsp" title="Đăng ký">ĐĂNG KÝ</a></li>
-                                            <li><a name="login11" class="log" href="login.jsp" title="Đăng nhập">${dn}</a>
+                                            <li><a name="logindn" class="log" href="login.jsp" >Đăng nhập</a>
                                             </li>
 
 

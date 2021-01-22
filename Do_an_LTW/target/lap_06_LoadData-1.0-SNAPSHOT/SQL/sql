@@ -295,3 +295,12 @@ CREATE TABLE cthd (
         				(12,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
         				INSERT into ctsp (id,noi_san_xuat,tinh_trang,chat_lieu_vo,chat_lieu_mat,nang_luong,chong_nuoc,kich_thuoc_mat,kich_thuoc_day) values
         				(14,"Đức","hàng mới","Thép cao cấp không ghỉ","Kính cao cấp chống xước","Chạy cơ","5ATM","44mm","22mm");
+
+
+        				CREATE TABLE binhluan (
+                            	ma_bl int not null null primary key,
+                        			ma_kh int  null ,
+                            	ma_sp int(11) null,
+                            	noi_dung varchar(500)
+
+                            	)

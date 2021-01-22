@@ -35,6 +35,7 @@ public class CT_resetpassword extends HttpServlet {
         if (test) {
             HttpSession session = request.getSession();
             session.setAttribute("authcode", changePass);
+            session.setAttribute("user_forget", email);
             response.sendRedirect("verify.jsp");
         }
 

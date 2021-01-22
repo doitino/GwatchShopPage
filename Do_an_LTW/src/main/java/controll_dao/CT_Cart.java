@@ -29,6 +29,12 @@ public class CT_Cart extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String dn =request.getParameter("dn");
+        if(dn!=null&&dn!="") {
+            request.setAttribute("dn", dn);
+        }else{
+            request.setAttribute("dn", "Đăng nhập");
+        }
 
         String command = request.getParameter("command");
         String tino = request.getParameter("tino");
@@ -90,6 +96,24 @@ public class CT_Cart extends HttpServlet {
             // ta test xem gio hang co them duoc ko?
 //                session.setAttribute("cart", cart);
             response.sendRedirect("cart.jsp");
+        }
+        if (command.equals("deleteCartIndex")) {
+
+            ProductEntity pro = new ProductEntity();
+            ma_sp = Integer.parseInt(id);
+            Product p = pro.getByid(ma_sp);
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getId() == ma_sp) {
+                    list.remove(i);
+                }
+            }
+
+            HttpSession session = request.getSession();
+            session.setAttribute("sum", sum(list));
+            session.setAttribute("pp", list);
+            // ta test xem gio hang co them duoc ko?
+//                session.setAttribute("cart", cart);
+            response.sendRedirect("CT_index");
         }
         if (command.equals("resetCart")) {
             ma_sp = Integer.parseInt(id);
