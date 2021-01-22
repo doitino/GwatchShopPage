@@ -142,24 +142,44 @@
                                 <div id="sliderproduct" class="">
                                     <ul class="slides" >
 
+                                        <<li class="product-thumb">
+                                        <a href="javascript:"
+                                           data-image="${n.img1}"
+                                           data-zoom-image="${n.img1}"
+                                           src="${n.img1}">
+                                            <img alt=""
+                                                 data-image="${n.img1}"
+                                                 src="${n.img2}">
+                                        </a></li>
+
                                         <li class="product-thumb">
-                                            <a href="javascript:" data-image="./product.hstatic.net/1000177652/product/7_0590d26379fb4da3ba8d9b57564ee6b0_master.jpg" data-zoom-image="./product.hstatic.net/1000177652/product/7_0590d26379fb4da3ba8d9b57564ee6b0_master.jpg" src="./product.hstatic.net/1000177652/product/7_0590d26379fb4da3ba8d9b57564ee6b0_master.jpg">
-                                                <img alt="ĐỒNG HỒ NAM TEVISE 1952 CHẠY CƠ CỰC CHẤT" data-image="./product.hstatic.net/1000177652/product/7_0590d26379fb4da3ba8d9b57564ee6b0_master.jpg" src="./product.hstatic.net/1000177652/product/7_0590d26379fb4da3ba8d9b57564ee6b0_small.jpg" >
+                                            <a href="javascript:"
+                                               data-image="${n.img3}"
+                                               data-zoom-image="${n.img3}"
+                                               src="${n.img3}">
+                                                <img alt=""
+                                                     data-image="${n.img3}"
+                                                     src="${n.img4}">
                                             </a></li>
 
                                         <li class="product-thumb">
-                                            <a href="javascript:" data-image="./product.hstatic.net/1000177652/product/10_master.jpg" data-zoom-image="./product.hstatic.net/1000177652/product/10_master.jpg" src="./product.hstatic.net/1000177652/product/10_master.jpg">
-                                                <img alt="ĐỒNG HỒ NAM TEVISE 1952 CHẠY CƠ CỰC CHẤT" data-image="./product.hstatic.net/1000177652/product/10_master.jpg" src="./product.hstatic.net/1000177652/product/10_small.jpg" >
+                                            <a href="javascript:"
+                                               data-image="${n.img5}"
+                                               data-zoom-image="${n.img5}"
+                                               src="${n.img5}">
+                                                <img alt=""
+                                                     data-image="${n.img5}"
+                                                     src="${n.img6}">
                                             </a></li>
 
                                         <li class="product-thumb">
-                                            <a href="javascript:" data-image="./product.hstatic.net/1000177652/product/8_b315af57d3ff4e058cf18a7c6d3c06f6_master.jpg" data-zoom-image="./product.hstatic.net/1000177652/product/8_b315af57d3ff4e058cf18a7c6d3c06f6_master.jpg" src="./product.hstatic.net/1000177652/product/8_b315af57d3ff4e058cf18a7c6d3c06f6_master.jpg">
-                                                <img alt="ĐỒNG HỒ NAM TEVISE 1952 CHẠY CƠ CỰC CHẤT" data-image="./product.hstatic.net/1000177652/product/8_b315af57d3ff4e058cf18a7c6d3c06f6_master.jpg" src="./product.hstatic.net/1000177652/product/8_b315af57d3ff4e058cf18a7c6d3c06f6_small.jpg" >
-                                            </a></li>
-
-                                        <li class="product-thumb">
-                                            <a href="javascript:" data-image="./product.hstatic.net/1000177652/product/9_master.jpg" data-zoom-image="./product.hstatic.net/1000177652/product/9_master.jpg" src="./product.hstatic.net/1000177652/product/9_master.jpg">
-                                                <img alt="ĐỒNG HỒ NAM TEVISE 1952 CHẠY CƠ CỰC CHẤT" data-image="./product.hstatic.net/1000177652/product/9_master.jpg" src="./product.hstatic.net/1000177652/product/9_small.jpg" >
+                                            <a href="javascript:"
+                                               data-image="${n.img7}"
+                                               data-zoom-image="${n.img7}"
+                                               src="${n.img7}">
+                                                <img alt=""
+                                                     data-image="${n.img7}"
+                                                     src="${n.img8}">
                                             </a></li>
 
                                     </ul>

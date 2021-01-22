@@ -1,6 +1,7 @@
 package controll_dao;
 
 import bin.CTSP;
+import bin.Image;
 import bin.Product;
 import entity.CTSP_Entity;
 import entity.ProductEntity;
@@ -34,6 +35,11 @@ public class CT_CTSP extends HttpServlet {
             int ma = Integer.parseInt(id);
             CTSP_Entity ctsp = new CTSP_Entity();
             CTSP c = ctsp.getCTSP(ma);
+
+
+            CTSP_Entity dao = new CTSP_Entity();
+            Image value = dao.getImage(ma);
+            request.setAttribute("n", value);
 
             request.setAttribute("username", id);
             request.setAttribute("ctsp", tdn);
