@@ -650,34 +650,34 @@
                                     <ul class="dropdown-menu" role="menu">
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Tevise">Đồng hồ Tevise</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Tevise">Đồng hồ Orient</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Skmei">Đồng hồ Skmei</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Skmei">Đồng hồ Daniel Wellington</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Halei">Đồng hồ Halei</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Halei">Đồng hồ Casio</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Longbo">Đồng hồ Longbo</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Longbo">Đồng hồ G-Shock</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ nam Curren">Đồng hồ nam
-                                                Curren</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ nam Curren">Đồng hồ nam
+                                                Calvin Klein</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ nam Baishuns">Đồng hồ nam
-                                                Baishuns</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ nam Baishuns">Đồng hồ nam
+                                                Fossil</a>
 
                                         </li>
 
@@ -693,17 +693,32 @@
                                     <ul class="dropdown-menu" role="menu">
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Beesister">Đồng hồ Beesister</a>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Beesister">Đồng hồ Daniel Wellington</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Skmei">Đồng hồ Skmei</a>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Skmei">Đồng hồ Doxa</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Halei">Đồng hồ Halei</a>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ Fossil</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ G-Shock</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ Casio</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ Orient</a>
 
                                         </li>
 

@@ -42,7 +42,7 @@ public class CT_CTSP extends HttpServlet {
             request.setAttribute("n", value);
 
             request.setAttribute("username", id);
-            request.setAttribute("ctsp", tdn);
+            request.setAttribute("ctsp", c);
             request.setAttribute("list", values);
             request.setAttribute("p", product);
             request.getRequestDispatcher("chitietsanpham.jsp").forward(request,response);
