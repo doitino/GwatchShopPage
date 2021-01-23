@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
 
 @WebServlet(name = "CT_Product_Nu", urlPatterns = "/CT_Product_Nu")
 public class CT_Product_Nu extends HttpServlet {
@@ -19,8 +20,35 @@ public class CT_Product_Nu extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Collection<Product> values = new ProductEntity().getAll("nu");
-        request.setAttribute("list", values);
-        request.getRequestDispatcher("products.jsp").forward(request, response);
+        response.setContentType("text/html; charset=UTF-8");
+        try{
+            String count_page = request.getParameter("count_page");
+            //   String count_after = request.getParameter("count_after");
+            ProductEntity pr = new ProductEntity();
+            int n =0;
+            if (count_page != null) n =Integer.parseInt(count_page);
+            if (count_page == null) n =1;
+//            if(count_after!=null) n= Integer.parseInt(count_after);
+            int size = 12;
+            int index = size *(n-1) ;
+            int count = pr.countP("nu");
+            int endpage =0;
+            endpage= count /size;
+            if(count%size != 0){
+                endpage++;
+            }
+            List<Product> value = pr.phanTrangP(index , size,"nu");
+            //test xem có lấy đúng số lượng sản phẩm
+//            for (Product p : value){
+//                System.out.println(p);
+//            }
+            System.out.println("aaaaaaaaaaaaaa"+n);
+            request.setAttribute("list",value);
+            request.setAttribute("a",n);
+            request.setAttribute("endPage",endpage);
+            request.getRequestDispatcher("products.jsp").forward(request,response);
+        }catch (Exception e){
+
+        }
     }
 }

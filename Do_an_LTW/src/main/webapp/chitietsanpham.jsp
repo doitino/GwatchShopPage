@@ -142,7 +142,7 @@
                                 <div id="sliderproduct" class="">
                                     <ul class="slides" >
 
-                                        <<li class="product-thumb">
+                                        <li class="product-thumb">
                                         <a href="javascript:"
                                            data-image="${n.img1}"
                                            data-zoom-image="${n.img1}"

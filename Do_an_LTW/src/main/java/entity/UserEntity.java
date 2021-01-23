@@ -40,7 +40,7 @@ public class UserEntity {
         Statement st = null;
         try {
             st = ConnectionDB.connect();
-            String sql ="insert into users (id,username,password,idgroup ,permission) values";
+            String sql ="insert into users (ma_tai_khoan,ten_tai_khoan,mat_khau,ma_nhom_tk,trang_thai ) values";
             int i =0;
             for (User d:data) {
                 if(++i<data.size())
@@ -63,7 +63,7 @@ public class UserEntity {
         PreparedStatement pre = null;
         try {
 
-            String sql ="insert into users (id,username,password,idgroup,permission ) values (?,?,?,?,?)" ;
+            String sql ="insert into users (ma_tai_khoan,ten_tai_khoan,mat_khau,ma_nhom_tk,trang_thai ) values (?,?,?,?,?)" ;
             pre = ConnectionDB.connect(sql);
             pre.setInt(1,user.getId());
             pre.setString(2, user.getUsername());
@@ -160,7 +160,7 @@ public class UserEntity {
     public static void deleteUser(int id){
         PreparedStatement ps =null ;
         try {
-            String sql = "Delete From users where id =?";
+            String sql = "Delete From users where ma_tai_khoan =?";
             ps = ConnectionDB.connect(sql);
             ps.setInt(1,id);
 
@@ -175,7 +175,7 @@ public class UserEntity {
         Connection con=null;
         PreparedStatement ps = null;
         try {
-            String sql = "select * from users where id = ?";
+            String sql = "select * from users where ma_tai_khoan = ?";
             ps = ConnectionDB.connect(sql);
             ps.setInt(1, idUpdate);
             System.out.println(sql);
@@ -203,7 +203,7 @@ public class UserEntity {
         PreparedStatement pre = null;
         try {
 
-            String sql ="update users set username=?,password=?,idgroup=?,permission=?  where id = ?" ;
+            String sql ="update users set ten_tai_khoan=?,mat_khau=?,ma_nhom_tk=?,trang_thai=?  where ma_tai_khoan = ?" ;
             pre= ConnectionDB.connectupdate(sql);
             pre.setString(1,user.getUsername());
             pre.setString(2, user.getPassword());
