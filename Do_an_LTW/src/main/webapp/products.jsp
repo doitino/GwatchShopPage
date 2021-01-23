@@ -287,13 +287,13 @@
                                     </div>
                                     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 text-center">
                                         <c:forEach begin="1" end="${endPage}" var="i">
-                                        <span class="page-node current"><a name="count_page" class="page-node" href="CT_ProductWebapp?count_page=${i}">${i}</a></span>
+                                        <span class="page-node current"><a name="count_page" class="page-node" href="CT_Product_Nam?count_page=${i}">${i}</a></span>
 
                                         </c:forEach>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
 
-                                        <a name="count_page" class="pull-right next fa fa-angle-right" href="CT_ProductWebapp?count_page=${endPage}"><span>Trang cuối</span></a>
+                                        <a name="count_page" class="pull-right next fa fa-angle-right" href="CT_Product_Nam?count_page=${endPage}"><span>Trang cuối</span></a>
 
                                     </div>
 

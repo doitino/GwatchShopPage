@@ -36,27 +36,27 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="logoadmin">
-                <a  href="indexAdmin.html"><img class="logo" src="image/logo.jpg" alt=""></a>
+                <a  href="CT_IndexAdmin"><img class="logo" src="../admin/image/logo.jpg" alt=""></a>
                 <a class="navbar-brand" href="#">Admin - WatchShop</a>
             </div>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="indexAdmin.html">Trang quản trị</a></li>
+                <li class="active"><a href="CT_IndexAdmin">Trang quản trị</a></li>
                 <li><a href="pages.html">Quản lý trang</a></li>
                 <li><a href="posts.html">Quản lý bài viết</a></li>
-                <li><a href="users.html">Quản lý tài khoản</a></li>
-                <li><a href="Customer.html">Quản lý khách hàng</a></li>
-                <li><a href="product.html">Quản lý sản phẩm</a></li>
-                <li><a href="hoadon.html">Quản lý hóa đơn</a></li>
-                <li  class="active"><a href="lienhe.html">Liên hệ</a></li>
+                <li><a href="CT_User">Quản lý tài khoản</a></li>
+                <li><a href="CT_Customer">Quản lý khách hàng</a></li>
+                <li><a href="CT_Product">Quản lý sản phẩm</a></li>
+                <li><a href="CT_HoaDon">Quản lý hóa đơn</a></li>
+                <li><a href="lienhe.jsp">Liên hệ</a></li>
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Chào bạn, Watch-Shop</a></li>
-                <li><a href="login.html">Đăng xuất</a></li>
+                <li><a href="CT_IndexAdmin">Chào bạn , Watch-Shop</a></li>
+                <li><a href="login.jsp">Đăng xuất</a></li>
             </ul>
-        </div>
-        <!--/.nav-collapse -->
+        </div><!--/.nav-collapse -->
     </div>
 </nav>
 
@@ -77,8 +77,8 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a type="button" data-toggle="modal" data-target="#addPage">Thêm trang</a></li>
                         <li><a href="blog_add.html">Thêm bài viết</a></li>
-                        <li><a href="user_add.html">Thêm tài khoản</a></li>
-                        <li><a href="product_add.html" type="button">Thêm sản phẩm</a></li>
+                        <li><a href="../admin/user_add.jsp">Thêm tài khoản</a></li>
+                        <li><a href="../admin/product_add.jsp" type="button" >Thêm sản phẩm</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,7 +89,7 @@
 <section id="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
-            <li><a href="indexAdmin.html">Trang quản trị</a></li>
+            <li><a href="CT_IndexAdmin">Trang quản trị</a></li>
             <li class="active">Quản lý liên hệ</li>
         </ol>
     </div>
@@ -100,22 +100,16 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="indexAdmin.html" class="list-group-item ">
+                    <a href="CT_IndexAdmin" class="list-group-item ">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Trang quản trị
                     </a>
-                    <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                       aria-hidden="true"></span> Quản lý trang <span class="badge">4</span></a>
-                    <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                                       aria-hidden="true"></span> Quản lý bài viết <span class="badge">6</span></a>
-                    <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                       aria-hidden="true"></span> Quản lý tài khoản <span class="badge">4</span></a>
-                    <a href="Customer.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                          aria-hidden="true"></span> Quản lý khách hàng <span class="badge">8</span></a>
-                    <a href="product.html" class="list-group-item"><span class="glyphicon glyphicon-shopping-cart"
-                                                                         aria-hidden="true"></span> Quản lý sản phẩm <span class="badge">6</span></a>
-                    <a href="hoadon.html" class="list-group-item"><span class="glyphicon glyphicon-book"
-                                                                        aria-hidden="true"></span> Quản lý hóa đơn<span class="badge">5</span></a>
-                    <a href="lienhe.html" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Liên hệ <span class="badge">6</span></a>
+                    <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Quản lý trang <span class="badge">4</span></a>
+                    <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Quản lý bài viết <span class="badge">6</span></a>
+                    <a href="CT_User" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Quản lý tài khoản <span class="badge">4</span></a>
+                    <a href="CT_Customer" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Quản lý khách hàng <span class="badge">8</span></a>
+                    <a href="CT_Product" class="list-group-item"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Quản lý sản phẩm <span class="badge">6</span></a>
+                    <a href="CT_HoaDon" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Quản lý hóa đơn<span class="badge">5</span></a>
+                    <a href="CT_LienHe" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Liên hệ <span class="badge">6</span></a>
 
                 </div>
 

@@ -195,6 +195,27 @@ public class ProductEntity {
         return 0;
 
     }
+    //Lấy tổng số sản phẩm
+    public static int countP(String maloai) {
+        PreparedStatement pre = null;
+        try {
+
+            pre = ConnectionDB.connect( "select count(*) from products where ma_loaisp =?");
+            pre.setString(1,maloai);
+
+            ResultSet rs = pre.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+            rs.close();
+            pre.close();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+
+    }
     //phân trang
     public static List<Product> phanTrang(int index ,int size){
         PreparedStatement pre = null;
@@ -204,6 +225,42 @@ public class ProductEntity {
             pre = ConnectionDB.connect(sql);
             pre.setInt(1,size);
             pre.setInt(2,index);
+
+            ResultSet rs = pre.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                ));
+            }
+            rs.close();
+            pre.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+        }
+
+    }
+    //phân trang
+    public static List<Product> phanTrangP(int index ,int size,String maloai){
+        PreparedStatement pre = null;
+        List<Product> re;
+        try {
+            String sql = "select * from products where ma_loaisp =? limit ? offset ?";
+            pre = ConnectionDB.connect(sql);
+            pre.setString(1,maloai);
+            pre.setInt(2,size);
+            pre.setInt(3,index);
 
             ResultSet rs = pre.executeQuery();
             re = new LinkedList<>();

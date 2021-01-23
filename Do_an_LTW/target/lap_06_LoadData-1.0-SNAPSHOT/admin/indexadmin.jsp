@@ -36,25 +36,25 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="logoadmin">
-                <a  href="indexadmin.jsp"><img class="logo" src="admin/image/logo.jpg" alt=""></a>
+                <a  href="CT_IndexAdmin"><img class="logo" src="../admin/image/logo.jpg" alt=""></a>
                 <a class="navbar-brand" href="#">Admin - WatchShop</a>
             </div>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="indexadmin.jsp">Trang quản trị</a></li>
+                <li class="active"><a href="CT_IndexAdmin">Trang quản trị</a></li>
                 <li><a href="pages.html">Quản lý trang</a></li>
                 <li><a href="posts.html">Quản lý bài viết</a></li>
-                <li><a href="user.jsp">Quản lý tài khoản</a></li>
-                <li><a href="khachhang.jsp">Quản lý khách hàng</a></li>
-                <li><a href="products.jsp">Quản lý sản phẩm</a></li>
-                <li><a href="hoadon.jsp">Quản lý hóa đơn</a></li>
+                <li><a href="CT_User">Quản lý tài khoản</a></li>
+                <li><a href="CT_Customer">Quản lý khách hàng</a></li>
+                <li><a href="CT_Product">Quản lý sản phẩm</a></li>
+                <li><a href="CT_HoaDon">Quản lý hóa đơn</a></li>
                 <li><a href="lienhe.jsp">Liên hệ</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="indexadmin.jsp">Chào bạn , Watch-Shop</a></li>
-                <li><a href="admin/login.jsp">Đăng xuất</a></li>
+                <li><a href="CT_IndexAdmin">Chào bạn , Watch-Shop</a></li>
+                <li><a href="login.jsp">Đăng xuất</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -75,8 +75,8 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a type="button" data-toggle="modal" data-target="#addPage">Thêm trang</a></li>
                         <li><a href="blog_add.html">Thêm bài viết</a></li>
-                        <li><a href="user_add.jsp">Thêm tài khoản</a></li>
-                        <li><a href="product_add.jsp" type="button" >Thêm sản phẩm</a></li>
+                        <li><a href="../admin/user_add.jsp">Thêm tài khoản</a></li>
+                        <li><a href="../admin/product_add.jsp" type="button" >Thêm sản phẩm</a></li>
 
                     </ul>
                 </div>
@@ -98,7 +98,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="indexadmin.jsp" class="list-group-item active main-color-bg">
+                    <a href="CT_IndexAdmin" class="list-group-item active main-color-bg">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Trang quảng trị
                     </a>
                     <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Quản lý trang <span class="badge">4</span></a>
