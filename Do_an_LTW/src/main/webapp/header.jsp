@@ -151,9 +151,9 @@
                 <li><a href="products.jsp">Đồng hồ Halei</a></li>
             </ul>
         </li>
-        <li><a href="chitiettintuc.html">Dịch vụ</a></li>
-        <li><a href="address.html">Giới thiệu</a></li>
-        <li><a href="dstintuc.html">Blog</a></li>
+        <li><a href="chitiettintuc.jsp">Dịch vụ</a></li>
+        <li><a href="address.jsp">Giới thiệu</a></li>
+        <li><a href="blog.jsp">Blog</a></li>
     </ul>
 </nav>
 <div id="page">
@@ -439,7 +439,7 @@
                                     <!-- LOGO -->
 
                                     <h1>
-                                        <a href="http://happylive.vn">
+                                        <a href="CT_index">
                                             <img src="./theme.hstatic.net/1000177652/1000229231/14/logo1.png?v=90"
                                                  alt="Happylive" class="img-responsive logoimg" />
                                         </a>
@@ -578,7 +578,7 @@
                                 <div class="menu-logo">
 
                                     <h1 class="logo logo-mobile">
-                                        <a href="http://happylive.vn">
+                                        <a href="CT_index">
                                             <img src="./theme.hstatic.net/1000177652/1000229231/14/logo.png?v=90"
                                                  alt="Happylive" class="img-responsive logoimg" />
                                         </a>
@@ -713,7 +713,7 @@
 
 
                                 <li>
-                                    <a href="chitiettintuc.html" class="" title="Dịch vụ">
+                                    <a href="chitiettintuc.jsp" class="" title="Dịch vụ">
                                         <span>Dịch vụ</span>
                                     </a>
                                 </li>
@@ -721,7 +721,7 @@
 
 
                                 <li>
-                                    <a href="address.html" class="" title="Giới thiệu">
+                                    <a href="address.jsp" class="" title="Giới thiệu">
                                         <span>Giới thiệu</span>
                                     </a>
                                 </li>
@@ -729,7 +729,7 @@
 
 
                                 <li>
-                                    <a href="dstintuc.html" class="" title="Blog">
+                                    <a href="blog.jsp" class="" title="Blog">
                                         <span>Blog</span>
                                     </a>
                                 </li>
