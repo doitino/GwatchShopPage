@@ -208,36 +208,19 @@
 
 
 
-                            <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
-                                <div class="select clearfix" style="display:none">
-                                    <select id="product-select" name="id" style="display:none">
-
-                                        <option value="1012006173">Default Title - 800,000₫</option>
-
-                                    </select>
-                                </div>
-
-                                <div class="select-wrapper ">
-                                </div>
 
 
                                 <div class="row">
                                     <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-                                        <button id="add-to-cart"   class=" btn-detail btn-color-add btn-min-width btn-mgt addtocart-modal" name="add">
-                                            Thêm vào giỏ
-                                        </button>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
-                                        <a href="phuongthucthanhtoan.html">
-                                            <button id="buy-now"   class=" btn-detail btn-color-buy btn-min-width btn-mgt">
-                                                Mua ngay
-                                            </button>
+                                        <a href="<c:url value="/CT_Cart">
+                                                            <c:param name="command" value="addCart"/>
+                                                            <c:param name="id" value="${p.id}"/>
+                                                            </c:url>">
+                                            <input style="background-color: darkblue ; color: white ;margin-top: 20px ;padding: 20px" value="Thêm vào giỏ hàng" type="button">
                                         </a>
                                     </div>
 
                                 </div>
-                            </form>
 
                             <div class="pt20">
                                 <!-- Begin tags -->
@@ -249,23 +232,23 @@
                                     <ul class="tags">
 
                                         <li class="active">
-                                            <a href="dssanpham.html">phụ kiện nam</a>
+                                            <a href="#">phụ kiện nam</a>
                                         </li>
 
                                         <li class="active">
-                                            <a href="dssanpham.html">thời trang nam</a>
+                                            <a href="#">thời trang nam</a>
                                         </li>
 
                                         <li class="active">
-                                            <a href="dssanpham.html">đồng hồ cơ</a>
+                                            <a href="#">đồng hồ cơ</a>
                                         </li>
 
                                         <li class="active">
-                                            <a href="dssanpham.html">đồng hồ</a>
+                                            <a href="#">đồng hồ</a>
                                         </li>
 
                                         <li class="active">
-                                            <a href="dssanpham.html">tevise</a>
+                                            <a href="#">tevise</a>
                                         </li>
 
                                     </ul>
@@ -369,8 +352,8 @@
                                     <div class="title-bl">
                                         <h2>Bình luận</h2>
                                         <label  style="background-color: #e6e6e6;padding-bottom: 30px ;border: 2px solid rgb(207, 206, 206);margin-bottom: 20px;width: 100%">
-                                            <p>Đời</p>
-                                            <h6>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h6>
+                                            <p># Đời</p>
+                                            <h6></h6>
                                         </label >
                                         <form action="CT_Binh_Luan">
                                             <input  style="display: none" name="id" value="${p.id}">

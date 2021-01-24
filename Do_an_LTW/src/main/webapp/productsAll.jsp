@@ -223,138 +223,146 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 content-product-list">
                             <div class="row product-list">
                                 <c:forEach items="${list}" var="p">
-                                <div class="col-md-4  col-sm-6 col-xs-12 pro-loop">
-                                    <div class="product-block product-resize">
-                                        <div class="product-img image-resize view view-third">
+                                    <div class="col-md-4  col-sm-6 col-xs-12 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
 
-                                            <div class="product-sale" >
-                                                <span><label class="sale-lb">- </label> ${p.sale}</span>
-                                            </div>
+                                                <div class="product-sale" >
+                                                    <span><label class="sale-lb">- </label> ${p.sale}</span>
+                                                </div>
 
 
 
-                                            <a href="CT_CTSP?masp=${p.id}" title="ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN">
-                                                <img class="first-image  has-img" alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " src="${p.img1}"  />
+                                                <a href="CT_CTSP?masp=${p.id}" title="ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN">
+                                                    <img class="first-image  has-img" alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " src="${p.img1}"  />
 
-                                                <img  class ="second-image" src="${p.img2}"  alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " />
+                                                    <img  class ="second-image" src="${p.img2}"  alt=" ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN " />
 
-                                            </a>
-                                            <div class="actionss">
-                                                <div class="btn-cart-products">
-                                                    <a href="<c:url value="/CT_Cart">
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="<c:url value="/CT_Cart">
                                                             <c:param name="command" value="addCart"/>
                                                             <c:param name="id" value="${p.id}"/>
                                                             </c:url>">
-                                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                                    </a>
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="CT_CTSP?masp=${p.id}" class="view-detail" >
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/dong-ho-longbo-mat-vuong-mau-trang-1"><i class="fa fa-eye"></i></a>
+                                                    </div>
                                                 </div>
-                                                <div class="view-details">
-                                                    <a href="CT_CTSP?masp=${p.id}" class="view-detail" >
-                                                        <span><i class="fa fa-clone"> </i></span>
-                                                    </a>
-                                                </div>
-                                                <div class="btn-quickview-products">
-                                                    <a href="javascript:void(0);" class="quickview" data-handle="/products/dong-ho-longbo-mat-vuong-mau-trang-1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="product-detail clearfix">
-
-
-                                            <!-- sử dụng pull-left -->
-                                            <h3 class="pro-name"> <a href="CT_CTSP?masp=${p.id}" title="ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN">${p.name} </a></h3>
-                                            <div class="pro-prices">
-                                                <p class="pro-price">${p.price}</p>
-                                                <p class="pro-price-del text-left"><del class="compare-price">${p.compare_price}</del></p>
-
 
                                             </div>
 
+                                            <div class="product-detail clearfix">
 
+
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"> <a href="CT_CTSP?masp=${p.id}" title="ĐỒNG HỒ LONGBO MẶT VUÔNG MÀU ĐEN">${p.name} </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">${p.price}</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">${p.compare_price}</del></p>
+
+
+                                                </div>
+
+
+                                            </div>
                                         </div>
+
                                     </div>
-
-                                </div>
                                 </c:forEach>
 
 
-                        <div class="col-md-12 col-sm-12 col-xs-12 ">
-                            <div class="clearfix">
-                                <div id="pagination" class="">
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <div class="clearfix">
+                                        <div id="pagination" class="">
 
 
-                                    <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+                                            <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 text-center">
+                                                <c:forEach begin="1" end="${endPage}" var="i">
+                                                    <span class="page-node current">
+                                                        <a href="<c:url value="/CT_ProductWebapp">
+                                                        <c:param name="productSearch" value="${name}"/>
+                                                        <c:param name="count_page" value="${i}"/>
+
+                                                         </c:url>" >
+                                                                ${i}
+                                                        </a></span>
+                                                </c:forEach>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+
+                                                <a name="count_page" class="pull-right next fa fa-angle-right" href="CT_ProductWebapp?count_page=${endPage}"><span>Trang cuối</span></a>
+
+                                            </div>
+
+
+
+                                        </div>
 
                                     </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 text-center">
-                                        <c:forEach begin="1" end="${endPage}" var="i">
-                                        <span class="page-node current"><a name="count_page" class="page-node" href="CT_Product_Nam?count_page=${i}">${i}</a></span>
-
-                                        </c:forEach>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
-
-                                        <a name="count_page" class="pull-right next fa fa-angle-right" href="CT_Product_Nam?count_page=${endPage}"><span>Trang cuối</span></a>
-
-                                    </div>
-
-
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
+
+                    <!-- End collection info -->
+                    <!-- Begin no products -->
+
+
+                    <!-- End no products -->
                 </div>
+                <script>
+                    Haravan.queryParams = {};
+                    if (location.search.length) {
+                        for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                            aKeyValue = aCouples[i].split('=');
+                            if (aKeyValue.length > 1) {
+                                Haravan.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                            }
+                        }
+                    }
+                    var collFilters = jQuery('.coll-filter');
+                    collFilters.change(function() {
+                        var newTags = [];
+                        var newURL = '';
+                        delete Haravan.queryParams.page;
+                        collFilters.each(function() {
+                            if (jQuery(this).val()) {
+                                newTags.push(jQuery(this).val());
+                            }
+                        });
+
+                        newURL = '/collections/' + 'dong-ho-nam-longbo';
+                        if (newTags.length) {
+                            newURL += '/' + newTags.join('+');
+                        }
+                        var search = jQuery.param(Haravan.queryParams);
+                        if (search.length) {
+                            newURL += '?' + search;
+                        }
+                        location.href = newURL;
+
+                    });
+                    jQuery('.sort-by')
+                        .val('title-ascending')
+                        .bind('change', function() {
+                            Haravan.queryParams.sort_by = jQuery(this).val();
+                            location.search = jQuery.param(Haravan.queryParams);
+                        });
+                </script>
             </div>
-
-            <!-- End collection info -->
-            <!-- Begin no products -->
-
-
-            <!-- End no products -->
         </div>
-        <script>
-            Haravan.queryParams = {};
-            if (location.search.length) {
-                for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
-                    aKeyValue = aCouples[i].split('=');
-                    if (aKeyValue.length > 1) {
-                        Haravan.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
-                    }
-                }
-            }
-            var collFilters = jQuery('.coll-filter');
-            collFilters.change(function() {
-                var newTags = [];
-                var newURL = '';
-                delete Haravan.queryParams.page;
-                collFilters.each(function() {
-                    if (jQuery(this).val()) {
-                        newTags.push(jQuery(this).val());
-                    }
-                });
-
-                newURL = '/collections/' + 'dong-ho-nam-longbo';
-                if (newTags.length) {
-                    newURL += '/' + newTags.join('+');
-                }
-                var search = jQuery.param(Haravan.queryParams);
-                if (search.length) {
-                    newURL += '?' + search;
-                }
-                location.href = newURL;
-
-            });
-            jQuery('.sort-by')
-                .val('title-ascending')
-                .bind('change', function() {
-                    Haravan.queryParams.sort_by = jQuery(this).val();
-                    location.search = jQuery.param(Haravan.queryParams);
-                });
-        </script>
     </div>
 </section>
 

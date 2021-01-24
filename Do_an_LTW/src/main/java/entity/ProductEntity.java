@@ -433,6 +433,63 @@ public class ProductEntity {
 
         }
     }
+    public static List<Product> getSearchAllPT(String name,int index,int size) {
+        List<Product> re;
+        PreparedStatement st = null;
+        try {
+            String sql = "select * from products where ten_sp like ? limit ? offset ?";
+            st = ConnectionDB.connect(sql);
+            st.setString(1, "%" + name + "%");
+            st.setInt(2,size);
+            st.setInt(3,index);
+            System.out.println(sql);
+            ResultSet rs = st.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                ));
+            }
+            rs.close();
+            st.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+    }
+    public static int countS(String name) {
+        PreparedStatement st = null;
+        int count =0;
+        try {
+            String sql = "select * from products where ten_sp like ? ";
+            st = ConnectionDB.connect(sql);
+            st.setString(1, "%" + name + "%");
+            System.out.println(sql);
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()) {
+                count ++;
+            }
+            rs.close();
+            st.close();
+            return count;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return 0;
+
+        }
+    }
     public Product getById(String id) {
         PreparedStatement s = null;
         try{
