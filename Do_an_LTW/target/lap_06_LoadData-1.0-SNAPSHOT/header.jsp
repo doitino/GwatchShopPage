@@ -151,9 +151,9 @@
                 <li><a href="products.jsp">Đồng hồ Halei</a></li>
             </ul>
         </li>
-        <li><a href="chitiettintuc.html">Dịch vụ</a></li>
-        <li><a href="address.html">Giới thiệu</a></li>
-        <li><a href="dstintuc.html">Blog</a></li>
+        <li><a href="chitiettintuc.jsp">Dịch vụ</a></li>
+        <li><a href="address.jsp">Giới thiệu</a></li>
+        <li><a href="blog.jsp">Blog</a></li>
     </ul>
 </nav>
 <div id="page">
@@ -439,7 +439,7 @@
                                     <!-- LOGO -->
 
                                     <h1>
-                                        <a href="http://happylive.vn">
+                                        <a href="CT_index">
                                             <img src="./theme.hstatic.net/1000177652/1000229231/14/logo1.png?v=90"
                                                  alt="Happylive" class="img-responsive logoimg" />
                                         </a>
@@ -578,7 +578,7 @@
                                 <div class="menu-logo">
 
                                     <h1 class="logo logo-mobile">
-                                        <a href="http://happylive.vn">
+                                        <a href="CT_index">
                                             <img src="./theme.hstatic.net/1000177652/1000229231/14/logo.png?v=90"
                                                  alt="Happylive" class="img-responsive logoimg" />
                                         </a>
@@ -650,34 +650,34 @@
                                     <ul class="dropdown-menu" role="menu">
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Tevise">Đồng hồ Tevise</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Tevise">Đồng hồ Orient</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Skmei">Đồng hồ Skmei</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Skmei">Đồng hồ Daniel Wellington</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Halei">Đồng hồ Halei</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Halei">Đồng hồ Casio</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Longbo">Đồng hồ Longbo</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ Longbo">Đồng hồ G-Shock</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ nam Curren">Đồng hồ nam
-                                                Curren</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ nam Curren">Đồng hồ nam
+                                                Calvin Klein</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ nam Baishuns">Đồng hồ nam
-                                                Baishuns</a>
+                                            <a href="CT_Product_Nam" title="Đồng hồ nam Baishuns">Đồng hồ nam
+                                                Fossil</a>
 
                                         </li>
 
@@ -693,17 +693,32 @@
                                     <ul class="dropdown-menu" role="menu">
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Beesister">Đồng hồ Beesister</a>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Beesister">Đồng hồ Daniel Wellington</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Skmei">Đồng hồ Skmei</a>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Skmei">Đồng hồ Doxa</a>
 
                                         </li>
 
                                         <li>
-                                            <a href="products.jsp" title="Đồng hồ Halei">Đồng hồ Halei</a>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ Fossil</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ G-Shock</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ Casio</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="CT_Product_Nu" title="Đồng hồ Halei">Đồng hồ Orient</a>
 
                                         </li>
 
@@ -713,7 +728,7 @@
 
 
                                 <li>
-                                    <a href="chitiettintuc.html" class="" title="Dịch vụ">
+                                    <a href="chitiettintuc.jsp" class="" title="Dịch vụ">
                                         <span>Dịch vụ</span>
                                     </a>
                                 </li>
@@ -721,7 +736,7 @@
 
 
                                 <li>
-                                    <a href="address.html" class="" title="Giới thiệu">
+                                    <a href="address.jsp" class="" title="Giới thiệu">
                                         <span>Giới thiệu</span>
                                     </a>
                                 </li>
@@ -729,7 +744,7 @@
 
 
                                 <li>
-                                    <a href="dstintuc.html" class="" title="Blog">
+                                    <a href="blog.jsp" class="" title="Blog">
                                         <span>Blog</span>
                                     </a>
                                 </li>

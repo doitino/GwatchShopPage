@@ -56,27 +56,27 @@
                             <ul class="list-unstyled list-styled">
 
                                 <li>
-                                    <a href="index.html">Trang chủ</a>
+                                    <a href="CT_index">Trang chủ</a>
                                 </li>
 
                                 <li>
-                                    <a href="dssanpham.html">Đồng hồ nam</a>
+                                    <a href="CT_Product_Nam">Đồng hồ nam</a>
                                 </li>
 
                                 <li>
-                                    <a href="dssanpham.html">Đồng hồ nữ</a>
+                                    <a href="CT_Product_Nu">Đồng hồ nữ</a>
                                 </li>
 
                                 <li>
-                                    <a href="address.html">Dịch vụ</a>
+                                    <a href="chitiettintuc.jsp.jsp">Dịch vụ</a>
                                 </li>
 
                                 <li>
-                                    <a href="dstintuc.html">Giới thiệu</a>
+                                    <a href="address.jsp">Giới thiệu</a>
                                 </li>
 
                                 <li>
-                                    <a href="chitiettintuc.html">Blog</a>
+                                    <a href="blog.jsp">Blog</a>
                                 </li>
 
                             </ul>
@@ -127,7 +127,7 @@
                             <ul class="list-inline">
 
                                 <li>
-                                    <a target="_blank" href="index.html" class="social-wrapper facebook">
+                                    <a target="_blank" href="CT_index" class="social-wrapper facebook">
 													<span class="social-icon">
 														<i class="fa fa-facebook"></i>
 													</span>
@@ -136,7 +136,7 @@
 
 
                                 <li>
-                                    <a target="_blank" href="index.html" class="social-wrapper twitter">
+                                    <a target="_blank" href="CT_index" class="social-wrapper twitter">
 													<span class="social-icon">
 														<i class="fa fa-twitter"></i>
 													</span>
@@ -145,7 +145,7 @@
 
 
                                 <li>
-                                    <a target="_blank" href="index.html" class="social-wrapper pinterest">
+                                    <a target="_blank" href="CT_index" class="social-wrapper pinterest">
 													<span class="social-icon">
 														<i class="fa fa-pinterest"></i>
 													</span>
@@ -154,7 +154,7 @@
 
 
                                 <li>
-                                    <a target="_blank" href="index.html" class="social-wrapper google">
+                                    <a target="_blank" href="CT_index" class="social-wrapper google">
 													<span class="social-icon">
 														<i class="fa fa-google-plus"></i>
 													</span>
@@ -163,7 +163,7 @@
 
 
                                 <li>
-                                    <a target="_blank" href="index.html" class="social-wrapper youtube">
+                                    <a target="_blank" href="CT_index" class="social-wrapper youtube">
 													<span class="social-icon">
 														<i class="fa fa-youtube"></i>
 													</span>
@@ -172,7 +172,7 @@
 
 
                                 <li>
-                                    <a target="_blank" href="index.html" class="social-wrapper instagram">
+                                    <a target="_blank" href="CT_index" class="social-wrapper instagram">
 													<span class="social-icon">
 														<i class="fa fa-instagram"></i>
 													</span>
@@ -273,7 +273,7 @@
                                     src="./product.hstatic.net/1000177652/product/7_0590d26379fb4da3ba8d9b57564ee6b0_small.jpg">
                             </td>
                             <td class="item-title">
-                                <a href="chitietsanpham.html">ĐỒNG HỒ NAM
+                                <a href="CT_Product_Nam">ĐỒNG HỒ NAM
                                     TEVISE 1952 CHẠY CƠ CỰC CHẤT<br><span></span></a>
                             </td>
                             <td class="item-quantity"><input id="quantity1" name="updates[]" min="1"
@@ -288,7 +288,7 @@
                                     src="./product.hstatic.net/1000177652/product/1_e0ed7c0240734782a8268793dce0b9b8_small.jpg">
                             </td>
                             <td class="item-title">
-                                <a href="chitietsanpham.html">ĐỒNG HỒ NAM SKMEI
+                                <a href="CT_Product_Nam">ĐỒNG HỒ NAM SKMEI
                                     KIM XANH DƯƠNG<br><span></span></a>
                             </td>
                             <td class="item-quantity"><input id="quantity1" name="updates[]" min="1"
@@ -318,7 +318,7 @@
                     <div class="row" style="margin-top:10px;">
                         <div class="col-lg-6">
                             <div class="comeback">
-                                <a href="dssanpham.html">
+                                <a href="CT_Product_Nam">
                                     <i class="fa fa-caret-left mr10"></i>Tiếp tục mua hàng
                                 </a>
                             </div>
