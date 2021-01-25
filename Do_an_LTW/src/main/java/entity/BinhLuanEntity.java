@@ -1,11 +1,41 @@
 package entity;
 
+import bin.BinhLuan;
 import bin.HoaDon;
 import database.ConnectionDB;
 
 import java.sql.*;
+import java.util.LinkedList;
+import java.util.List;
 
 public class BinhLuanEntity {
+    public List<BinhLuan> getAll() {
+        List<BinhLuan> re;
+        PreparedStatement ps = null;
+        try {
+            String sql ="select * from binhluan";
+            ps = ConnectionDB.connect(sql);
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new BinhLuan(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getString(4)
+
+                ));
+            }
+            rs.close();
+            ps.close();
+            return re ;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
     // Thêm 1 bình luận mới vào database
     public static int addone(int mabl,int makh,int msp,String noidung){
         Connection con;
