@@ -1,7 +1,6 @@
 package entity;
 
 import bin.BinhLuan;
-import bin.HoaDon;
 import database.ConnectionDB;
 
 import java.sql.*;

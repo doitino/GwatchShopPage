@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/CT_index")
@@ -33,8 +34,11 @@ public class CT_index extends HttpServlet {
 
         List<Product> list = dao.getAll(index);
 
-        ProductNew dao1 = new ProductNew();
+//        ProductNew dao1 = new ProductNew();
      //   List<Product> value = dao1.getProductNew();
+        Collection<Product> values = new ProductEntity().getProductSaleA();
+
+        request.setAttribute("listsale", values);
 
         request.setAttribute("List", list);
         request.setAttribute("index", index);

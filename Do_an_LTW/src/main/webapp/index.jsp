@@ -243,7 +243,7 @@
                             <aside class="styled_header  use_icon ">
 
 
-                                <h3>Sản phẩm mới</h3>
+                                <h3>Sản phẩm khuyến mãi</h3>
                                 <span class="icon"><img
                                         src="./theme.hstatic.net/1000177652/1000229231/14/icon_sale.png?v=90"
                                         alt="Newest trends"></span>
@@ -253,58 +253,52 @@
                     </div>
 
                     <div class="row content-product-list products-resize">
-                        <c:forEach items="${ProductNew}" var="v">
+                        <c:forEach items="${listsale}" var="v">
                             <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
                                 <div class="product-block product-resize">
                                     <div class="product-img image-resize view view-third">
-
                                         <div class="product-sale">
                                             <span><label class="sale-lb">- </label> ${v.sale}</span>
                                         </div>
 
-                                        <a href="<c:url value="/CT_CTSP">
-                                            <c:param name="username" value="${ten_dang_nhap}"/>
-                                        </c:url>"
-                                           title="${v.name}">
+                                        <a href="CT_CTSP?masp=${v.id}">
+
                                             <img class="first-image  has-img"
-                                                 alt=" ĐỒNG HỒ NAM SKMEI CÓ LỊCH MỎ RỘNG "
+                                                 alt=" ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG "
                                                  src="${v.img1}" />
 
                                             <img class="second-image"
                                                  src="${v.img2}"
-                                                 alt=" ĐỒNG HỒ NAM SKMEI CÓ LỊCH MỎ RỘNG " />
+                                                 alt=" ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG " />
 
                                         </a>
                                         <div class="actionss">
                                             <div class="btn-cart-products">
-                                                <a href="xemgiohang.jsp"
-                                                >
-                                                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                <a href="<c:url value="/CT_Cart">
+                                                            <c:param name="command" value="addCart"/>
+                                                            <c:param name="id" value="${v.id}"/>
+                                                            </c:url>">
+                                                    <i  class="fa fa-shopping-bag" aria-hidden="true"></i>
                                                 </a>
                                             </div>
                                             <div class="view-details">
-                                                <a href="<c:url value="/CT_CTSP">
-                                                <c:param name="username" value="${ten_dang_nhap}"/>
-                                            </c:url>"
-                                                   class="view-detail">
+                                                <a href="CT_CTSP?masp=${v.id}" class="view-detail">
                                                     <span><i class="fa fa-clone"> </i></span>
                                                 </a>
                                             </div>
                                             <div class="btn-quickview-products">
                                                 <a href="javascript:void(0);" class="quickview"
-                                                   data-handle="/products/dong-ho-nam-skmei-co-lich-mo-rong"><i
+                                                   data-handle="/products/dong-ho-nam-skmei-kim-xanh-duong"><i
                                                         class="fa fa-eye"></i></a>
                                             </div>
                                         </div>
-
                                     </div>
 
                                     <div class="product-detail clearfix">
                                         <!-- sử dụng pull-left -->
-                                        <h3 class="pro-name"><a href="<c:url value="/CT_CTSP">
-                                            <c:param name="username" value="${ten_dang_nhap}"/>
-                                        </c:url>"
-                                                title="ĐỒNG HỒ NAM SKMEI CÓ LỊCH MỎ RỘNG">${v.name}</a></h3>
+                                        <h3 class="pro-name"><a
+                                                href="CT_CTSP?masp=${v.id}"
+                                                title="ĐỒNG HỒ NAM SKMEI KIM XANH DƯƠNG">${v.name}</a></h3>
                                         <div class="pro-prices">
                                             <p class="pro-price">${v.compare_price}</p>
                                             <p class="pro-price-del text-left"><del
@@ -324,7 +318,7 @@
                         <div class="col-lg-12 pull-center center ">
 
 
-                            <a class="btn btn-readmore" href="index.jsp"
+                            <a class="btn btn-readmore" href="CT_Product_Sale"
                                role="button">Xem thêm</a>
 
 

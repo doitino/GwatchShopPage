@@ -116,6 +116,43 @@ public class ProductEntity {
         }
 
     }
+    //lấy sản phẩm được khuyến mãi
+    public static List<Product> getProductSaleA() {
+        List<Product> re;
+        PreparedStatement ps = null;
+        String sql ="";
+        try {
+            sql ="select * from products where sale not like ? limit 12 offset 6 ";
+            ps = ConnectionDB.connect(sql);
+            ps.setString(1,"0%");
+            ResultSet rs = ps.executeQuery();
+            re = new LinkedList<>();
+            while (rs.next() ) {
+                re.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getLong(7),
+                        rs.getLong(8),
+                        rs.getString(9),
+                        rs.getLong(10)
+                ));
+
+            }
+            System.out.println(re.size());
+            rs.close();
+            ps.close();
+            return re;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return new LinkedList<>();
+
+        }
+
+    }
     //lấy sản phẩm bán chạy nhất
     public static List<Product> getSaleTop(int top) {
         List<Product> re;

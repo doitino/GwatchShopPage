@@ -1,6 +1,8 @@
 package bin;
 
-public class CTSP {
+import java.io.Serializable;
+
+public class CTSP implements Serializable {
     private int id;
     private String noi_sx;
     private String trinh_trang;

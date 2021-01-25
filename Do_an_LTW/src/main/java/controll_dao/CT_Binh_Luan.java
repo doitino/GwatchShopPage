@@ -1,6 +1,5 @@
 package controll_dao;
 
-import bin.Customer;
 import entity.BinhLuanEntity;
 import entity.CustomerEntity;
 

@@ -1,6 +1,8 @@
 package bin;
 
-public class ChangePass {
+import java.io.Serializable;
+
+public class ChangePass implements Serializable {
     String email;
     String code;
 

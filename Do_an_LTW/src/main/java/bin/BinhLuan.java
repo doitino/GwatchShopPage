@@ -1,7 +1,9 @@
 package bin;
 
-public class BinhLuan {
-    private int mabl;
+import java.io.Serializable;
+
+public class BinhLuan implements Serializable {
+    private int ma_bl;
     private int ma_kh;
     private int ma_sp;
     private String noi_dung;
@@ -9,19 +11,19 @@ public class BinhLuan {
     public BinhLuan() {
     }
 
-    public BinhLuan(int mabl, int ma_kh, int ma_sp, String noi_dung) {
-        this.mabl = mabl;
+    public BinhLuan(int ma_bl, int ma_kh, int ma_sp, String noi_dung) {
+        this.ma_bl = ma_bl;
         this.ma_kh = ma_kh;
         this.ma_sp = ma_sp;
         this.noi_dung = noi_dung;
     }
 
-    public int getMabl() {
-        return mabl;
+    public int getMa_bl() {
+        return ma_bl;
     }
 
-    public void setMabl(int mabl) {
-        this.mabl = mabl;
+    public void setMa_bl(int ma_bl) {
+        this.ma_bl = ma_bl;
     }
 
     public int getMa_kh() {
