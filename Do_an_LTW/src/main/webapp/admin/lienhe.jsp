@@ -130,118 +130,24 @@
                         <br>
                         <table class="table table-striped table-hover">
                             <tr>
-                                <th>STT</th>
+                            <tr>
                                 <th>Mã liên hệ </th>
-                                <th>Tên khách hàng</th>
-                                <th>Số điện thoại</th>
-                                <th>Email</th>
-                                <th>Tiêu đề</th>
+                                <th>Mã khách hàng</th>
+                                <th>Mã sản phẩm</th>
                                 <th>Nội dung</th>
-                                <th>Số sao</th>
-                                <th>Phản hồi</th>
+
 
                             </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>LH-235</td>
-                                <td>Trần Văn Đời</td>
-                                <td>01020305564</td>
-                                <td>doitino@gmail.com</td>
-                                <td>Đánh giá sản phẩm</td>
-                                <td>Đánh giá: Đây là một chiếc đồng hồ tiện dụng và thoải mái,
-                                    và tôi thích cảm giác đáng kể của nó. Nó thực sự trông thanh lịch, mặc dù là thực dụng.
-                                    Và tất nhiên, múi giờ thứ hai và chức năng E6B rất hữu ích. </td>
-                                <td><img style="width: 60px; height: 20px;" src="../adminstrap_theme/image/danhgia.jpg" alt=""></td>
-                                <td>
-                                    <a  data-toggle="modal" data-target="#modalContactForm"  class="list-group-item"><span class="glyphicon glyphicon-send"
-                                                                                                                           aria-hidden="true"></span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02</td>
-                                <td>LH-235</td>
-                                <td>Trần Văn Đời</td>
-                                <td>01020305564</td>
-                                <td>doitino@gmail.com</td>
-                                <td>Đánh giá sản phẩm</td>
-                                <td>Đánh giá: Đây là một chiếc đồng hồ tiện dụng và thoải mái,
-                                    và tôi thích cảm giác đáng kể của nó. Nó thực sự trông thanh lịch, mặc dù là thực dụng.
-                                    Và tất nhiên, múi giờ thứ hai và chức năng E6B rất hữu ích. </td>
-                                <td><img style="width: 60px; height: 20px;" src="../adminstrap_theme/image/danhgia.jpg" alt=""></td>
-                                <td>
-                                    <a  data-toggle="modal" data-target="#modalContactForm"  class="list-group-item"><span class="glyphicon glyphicon-send"
-                                                                                                                           aria-hidden="true"></span></a>
-                                </td>
+                            <c:forEach items="${list}" var="bl">
+                                <tr>
+                                    <td>${bl.ma_bl}</td>
+                                    <td>${bl.ma_kh}</td>
+                                    <td>${bl.ma_sp}</td>
+                                    <td>${bl.noi_dung}</td>
 
-                            </tr>
-                            <tr>
-                                <td>03</td>
-                                <td>LH-235</td>
-                                <td>Trần Văn Đời</td>
-                                <td>01020305564</td>
-                                <td>doitino@gmail.com</td>
-                                <td>Đánh giá sản phẩm</td>
-                                <td>Đánh giá: Đây là một chiếc đồng hồ tiện dụng và thoải mái,
-                                    và tôi thích cảm giác đáng kể của nó. Nó thực sự trông thanh lịch, mặc dù là thực dụng.
-                                    Và tất nhiên, múi giờ thứ hai và chức năng E6B rất hữu ích. </td>
-                                <td><img style="width: 60px; height: 20px;" src="../adminstrap_theme/image/danhgia.jpg" alt=""></td>
-                                <td>
-                                    <a  data-toggle="modal" data-target="#modalContactForm"  class="list-group-item"><span class="glyphicon glyphicon-send"
-                                                                                                                           aria-hidden="true"></span></a>
-                                </td>
 
-                            </tr>
-                            <tr>
-                                <td>04</td>
-                                <td>LH-235</td>
-                                <td>Trần Văn Đời</td>
-                                <td>01020305564</td>
-                                <td>doitino@gmail.com</td>
-                                <td>Đánh giá sản phẩm</td>
-                                <td>Đánh giá: Đây là một chiếc đồng hồ tiện dụng và thoải mái,
-                                    và tôi thích cảm giác đáng kể của nó. Nó thực sự trông thanh lịch, mặc dù là thực dụng.
-                                    Và tất nhiên, múi giờ thứ hai và chức năng E6B rất hữu ích. </td>
-                                <td><img style="width: 60px; height: 20px;" src="../adminstrap_theme/image/danhgia.jpg" alt=""></td>
-                                <td>
-                                    <a  data-toggle="modal" data-target="#modalContactForm"  class="list-group-item"><span class="glyphicon glyphicon-send"
-                                                                                                                           aria-hidden="true"></span></a>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td>05</td>
-                                <td>LH-235</td>
-                                <td>Trần Văn Đời</td>
-                                <td>01020305564</td>
-                                <td>doitino@gmail.com</td>
-                                <td>Đánh giá sản phẩm</td>
-                                <td>Đánh giá: Đây là một chiếc đồng hồ tiện dụng và thoải mái,
-                                    và tôi thích cảm giác đáng kể của nó. Nó thực sự trông thanh lịch, mặc dù là thực dụng.
-                                    Và tất nhiên, múi giờ thứ hai và chức năng E6B rất hữu ích.</td>
-                                <td><img style="width: 60px; height: 20px;" src="../adminstrap_theme/image/danhgia.jpg" alt=""></td>
-                                <td>
-                                    <a  data-toggle="modal" data-target="#modalContactForm"  class="list-group-item"><span class="glyphicon glyphicon-send"
-                                                                                                                           aria-hidden="true"></span></a>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td>06</td>
-                                <td>LH-235</td>
-                                <td>Trần Văn Đời</td>
-                                <td>01020305564</td>
-                                <td>doitino@gmail.com</td>
-                                <td>Đánh giá sản phẩm</td>
-                                <td>Đánh giá: Đây là một chiếc đồng hồ tiện dụng và thoải mái,
-                                    và tôi thích cảm giác đáng kể của nó. Nó thực sự trông thanh lịch, mặc dù là thực dụng.
-                                    Và tất nhiên, múi giờ thứ hai và chức năng E6B rất hữu ích.</td>
-                                <td><img style="width: 60px; height: 20px;" src="../adminstrap_theme/image/danhgia.jpg" alt=""></td>
-                                <td>
-                                    <a  data-toggle="modal" data-target="#modalContactForm"  class="list-group-item"><span class="glyphicon glyphicon-send"
-                                                                                                                           aria-hidden="true"></span></a>
-                                </td>
-
-                            </tr>
+                                </tr>
+                            </c:forEach>
 
                         </table>
                     </div>
