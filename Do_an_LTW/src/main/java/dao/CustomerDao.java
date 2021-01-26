@@ -15,7 +15,7 @@ public class CustomerDao {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
-            String sql = "insert into customers(ten_kh,password,ngay_sinh,gioi_tinh,email,sdt,dia_chi) values (?,?,?,?,?,?,?)";
+            String sql = "insert into customers(ten_kh,mat_khau,ngay_sinh,gioi_tinh,email,sdt,dia_chi) values (?,?,?,?,?,?,?)";
             System.out.println(sql);
             ps = con.prepareStatement(sql);
             ps.setString(1, rscus.getTen_kh());
