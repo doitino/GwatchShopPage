@@ -331,7 +331,7 @@
 
                         <div class="col-xs-12 col-sm-6 home-category-item-2">
                             <div class="block-home-category">
-                                <a href="http://happylive.vn/collections/dong-ho-nam">
+                                <a href="CT_Product_Nam">
                                     <img class="b-lazy b-loaded"
                                          src="./theme.hstatic.net/1000177652/1000229231/14/block_home_category1.jpg?v=90"
                                          alt="nam">
@@ -342,7 +342,7 @@
 
                         <div class="col-xs-12 col-sm-6 home-category-item-3">
                             <div class="block-home-category">
-                                <a href="http://happylive.vn/collections/dong-ho-nu">
+                                <a href="CT_Product_Nu">
                                     <img class="b-lazy b-loaded"
                                          src="./theme.hstatic.net/1000177652/1000229231/14/block_home_category2.jpg?v=90"
                                          alt="nữ">
