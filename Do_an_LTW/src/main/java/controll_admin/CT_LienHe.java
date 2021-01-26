@@ -19,9 +19,9 @@ public class CT_LienHe extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        BinhLuanEntity bl= new BinhLuanEntity();
-//        List<BinhLuan> value = bl.getAll();
-//        request.setAttribute("list",value);
-//        request.getRequestDispatcher("admin/lienhe.jsp").forward(request,response);
+        BinhLuanEntity bl= new BinhLuanEntity();
+        List<BinhLuan> value = bl.getAll();
+        request.setAttribute("list",value);
+        request.getRequestDispatcher("admin/lienhe.jsp").forward(request,response);
     }
 }

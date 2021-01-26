@@ -43,7 +43,6 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="CT_IndexAdmin">Trang quản trị</a></li>
-                <li><a href="pages.html">Quản lý trang</a></li>
                 <li><a href="posts.html">Quản lý bài viết</a></li>
                 <li><a href="CT_User">Quản lý tài khoản</a></li>
                 <li><a href="CT_Customer">Quản lý khách hàng</a></li>
@@ -53,7 +52,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="CT_IndexAdmin">Chào bạn , Watch-Shop</a></li>
+                <li><a href="CT_index">Chào bạn , Watch-Shop</a></li>
                 <li><a href="login.jsp">Đăng xuất</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -101,7 +100,6 @@
                     <a href="CT_IndexAdmin" class="list-group-item active main-color-bg">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Trang quảng trị
                     </a>
-                    <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Quản lý trang <span class="badge">4</span></a>
                     <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Quản lý bài viết <span class="badge">6</span></a>
                     <a href="CT_User" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Quản lý tài khoản <span class="badge">4</span></a>
                     <a href="CT_Customer" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Quản lý khách hàng <span class="badge">8</span></a>
@@ -127,16 +125,16 @@
                             }
                         </style>
                         <div class="col-md-3">
-                            <a  href="user.jsp">
+                            <a  href="CT_User">
 
                                 <div class="well dash-box">
-                                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
+                                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 7</h2>
                                     <h4>Tài khoản</h4>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-3">
-                            <a href="pages.html">
+                            <a href="#">
                                 <div class="well dash-box">
                                     <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
                                     <h4>Trang</h4>
@@ -144,9 +142,9 @@
                             </a>
                         </div>
                         <div class="col-md-3">
-                            <a href="posts.html">
+                            <a href="#">
                                 <div class="well dash-box">
-                                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 33</h2>
+                                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 3</h2>
                                     <h4>Bài viết</h4>
                                 </div>
                             </a>
